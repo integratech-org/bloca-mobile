@@ -1,0 +1,9 @@
+/.expo
+node_modules
+build
+bin
+expo-env.d.ts
+uniwind-types.d.ts
+bun.lock
+ios
+android

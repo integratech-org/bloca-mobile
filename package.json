@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.4",
+    "bloca-mobile": ".",
     "expo": "~57.0.4",
     "expo-constants": "~57.0.3",
     "expo-device": "~57.0.0",
@@ -34,7 +35,17 @@
     "uniwind": "^1.10.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@types/react": "~19.2.2",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~57.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "prettier": "^3.9.5",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -43,7 +54,15 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix .",
+    "prettier:check": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "pre-commit": "lint-staged",
+    "postinstall": "husky",
+    "ts-check": "tsc --noEmit true --project ./tsconfig.json",
+    "format": "prettier:fix",
+    "prepare": "husky"
   },
   "private": true
 }
