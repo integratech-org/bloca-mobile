@@ -1,62 +1,45 @@
-# bloca-mobile
+# Bloca Mobile App (`bloca-mobile`)
 
-Mobile app for BLOCA, built with Expo + React Native.
+Part of the **BLOCA** ecosystem — an IoT-monitored plastic-to-brick compactor
+with machine learning-based grading.
 
-## Tech stack
+`bloca-mobile` is the cross-platform mobile application built for field
+operators, technicians, and managers to monitor compactor status, receive push
+alerts on compaction cycles, and review brick grading reports on the go.
 
-- Expo SDK 57
-- React Native 0.86 + React 19
-- Expo Router
-- HeroUI Native
-- TypeScript
+## Features
 
-## Prerequisites
+- **Real-Time Alerts & Notifications:** Immediate push notifications for
+  compactor maintenance, cycle completion, or error states.
+- **Mobile Telemetry Viewer:** Compact dashboard for checking live sensor
+  metrics from remote compaction units.
+- **Cross-Platform:** Built with Expo and React Native for iOS, Android, and
+  Web.
 
-- Bun 1.x
-- Expo development environment for your target platform:
-  - Android Studio (Android)
-  - Xcode (iOS, macOS only)
+## Tech Stack
 
-## Getting started
+- **Framework:** React Native 0.86 & Expo (v57)
+- **Routing:** Expo Router (`expo-router`)
+- **Styling:** Tailwind CSS (`tailwindcss`, `uniwind`, `tailwind-variants`)
+- **UI Components:** Heroui Native & Expo UI primitives
+- **Quality Control:** ESLint, Prettier, TypeScript, and Husky pre-commit hooks
 
-```bash
-# install dependencies
-bun install
+## Project Structure
 
-# start Expo dev server
-bun run start
+```text
+bloca-mobile/
+├── app/               # Expo Router file-based screens and layouts
+├── assets/            # App icons and splash screens
+├── components/        # Reusable mobile UI components
+├── hooks/             # Custom React hooks
+├── scripts/           # Setup and utility scripts
+├── package.json
+└── tsconfig.json
 ```
 
-Then run on a platform:
+## Related Repositories
 
-```bash
-bun run android
-bun run ios
-bun run web
-```
-
-## Available scripts
-
-- `bun run start` — start Expo development server
-- `bun run android` — open Android target
-- `bun run ios` — open iOS target
-- `bun run web` — run web target
-- `bun run lint` — run ESLint
-- `bun run lint:fix` — run ESLint and auto-fix
-- `bun run ts-check` — run TypeScript checks
-- `bun run prettier:check` — verify formatting
-- `bun run prettier:fix` / `bun run format` — format codebase
-
-## Project structure
-
-```txt
-src/
-  app/         # Expo Router routes and layouts
-  components/  # reusable mobile UI components
-  global.css   # global utility classes (Uniwind)
-```
-
-## Notes
-
-- App entry is `expo-router/entry`.
-- Root providers are configured in `src/app/_layout.tsx`.
+- [`bloca-admin`](https://github.com/integratech-org/bloca-admin) - Admin web
+  dashboard
+- [`bloca-api`](https://github.com/integratech-org/bloca-api) - Backend REST API
+  service
