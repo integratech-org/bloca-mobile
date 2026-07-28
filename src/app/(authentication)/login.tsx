@@ -26,7 +26,7 @@ export default function LoginScreen() {
           className='text-accent gap-4'
           size='md'
           variant='primary'
-          onPress={() => console.log('Login button pressed')}
+          onPress={() => router.push('/(tabs)/dashboard')}
         >
           <Button.Label>Login</Button.Label>
         </Button>
