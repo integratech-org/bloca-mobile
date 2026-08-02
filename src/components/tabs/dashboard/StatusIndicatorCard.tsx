@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native';
 import { Card } from 'heroui-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import * as Progress from 'react-native-progress';
 
-import ProgressBar from '@/components/ui/ProgressBar';
 export default function StatusIndicatorCard() {
   return (
     <Card className='rounded-2xl bg-[#C15B33] px-4 py-4'>
@@ -34,8 +34,16 @@ export default function StatusIndicatorCard() {
       </View>
 
       {/* Progress bar (static value, plain View — no Pro dependency) */}
-      <View className='mt-2 h-2 w-full overflow-hidden rounded-full bg-[#F4DCCB]'>
-        <ProgressBar progress={0.5} />
+      <View className='mt-2'>
+        <Progress.Bar
+          progress={0.5}
+          width={null}
+          height={8}
+          borderRadius={9999}
+          color='#FFFFFF'
+          unfilledColor='rgba(244, 220, 203, 0.3)'
+          borderWidth={0}
+        />
       </View>
     </Card>
   );

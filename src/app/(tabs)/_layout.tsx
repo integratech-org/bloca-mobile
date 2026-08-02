@@ -32,9 +32,17 @@ function TabIcon({
 const HEADER_CONFIG: Record<string, { greeting: string; title: string }> = {
   '/dashboard': { greeting: 'Welcome back!', title: 'Bloca, User' },
   '/logs': { greeting: 'Activity', title: 'Logs' },
-  '/processing': { greeting: 'In progress', title: 'Processing' },
+  '/processing': { greeting: 'In progress', title: 'Batch Processing' },
   '/quality': { greeting: 'Standards', title: 'Quality' },
   '/profile': { greeting: 'Your account', title: 'Profile' },
+  '/checklist': {
+    greeting: 'Checklist',
+    title: 'Batch Checklist',
+  },
+  '/activetracking': {
+    greeting: 'Active Tracking',
+    title: 'Batch Active Tracking',
+  },
 };
 
 function ScreenHeader() {
@@ -73,7 +81,7 @@ export default function TabsLayout() {
           tabBarShowLabel: false,
           animation: 'none',
           tabBarStyle: {
-            height: 60 + insets.bottom,
+            height: 50 + insets.bottom,
             paddingBottom: insets.bottom,
             paddingTop: 8,
           },
@@ -88,18 +96,18 @@ export default function TabsLayout() {
           }}
         />
         <Tabs.Screen
-          name='logs'
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <TabIcon name='receipt-long' focused={focused} />
-            ),
-          }}
-        />
-        <Tabs.Screen
           name='processing'
           options={{
             tabBarIcon: ({ focused }) => (
               <TabIcon name='autorenew' focused={focused} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name='logs'
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabIcon name='receipt-long' focused={focused} />
             ),
           }}
         />
@@ -119,6 +127,7 @@ export default function TabsLayout() {
             ),
           }}
         />
+        <Tabs.Screen name='(sub-processing)' options={{ href: null }} />
       </Tabs>
     </View>
   );
