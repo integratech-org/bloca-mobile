@@ -1,10 +1,4 @@
 module.exports = {
-  // Type check TypeScript files
-  '**/*.(ts|tsx)': () => 'bun ts-check',
-
-  // Lint & Prettify TS and JS files
-  '**/*.(ts|tsx|js)': () => ['bun lint:fix', 'bun prettier:fix'],
-
-  // Prettify only Markdown and JSON files
-  '**/*.(md|json)': () => 'bun prettier:fix',
+  '*.{js,jsx,ts,tsx}': () => ['bun run lint:fix', 'bun run prettier:fix'],
+  '*.{json,md,css,scss,html,yml,yaml}': () => ['bun run prettier:fix'],
 };
