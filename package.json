@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.4",
-    "@expo/vector-icons": "^15.0.2",
+    "@react-native-vector-icons/material-design-icons": "^13.1.4",
     "bloca-mobile": ".",
     "expo": "~57.0.4",
     "expo-constants": "~57.0.3",
