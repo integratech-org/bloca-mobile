@@ -66,6 +66,11 @@ export default function WelcomeScreen() {
           />
         </View>
 
+        {/* Progress Dots */}
+        <View className='items-center justify-center p-4'>
+          <ProgressDots total={4} current={0} />
+        </View>
+
         {/* Button */}
         <View className='gap-2 px-4'>
           <Button>
