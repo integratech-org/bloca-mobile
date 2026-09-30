@@ -11,10 +11,10 @@ export default function OnboardingLayout() {
 
   // map the current path to a step number for the progress dots
   const getStepFromPath = (path: string): number => {
-    if (path.includes('welcome')) return 0;
-    if (path.includes('welcome-page2')) return 1;
-    if (path.includes('welcome-page3')) return 2;
-    if (path.includes('welcome-page4')) return 3;
+    if (path.includes('welcome') && !path.includes('page')) return 0;
+    if (path.includes('welcome-pagetwo')) return 1;
+    if (path.includes('welcome-pagethree')) return 2;
+    if (path.includes('welcome-pagefour')) return 3;
     return 0; // Default to step 0 if no match
   };
 
@@ -74,7 +74,7 @@ export default function OnboardingLayout() {
 
         {/* Progress Dots */}
         <View className='items-center justify-center p-4'>
-          <ProgressDots total={4} current={0} />
+          <ProgressDots total={totalSteps} current={currentStep} />
         </View>
 
         {/* Button */}
