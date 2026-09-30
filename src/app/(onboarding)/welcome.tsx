@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { Text, View } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function WelcomePage() {
   return (
     <>
       {/* Welcome Text */}
