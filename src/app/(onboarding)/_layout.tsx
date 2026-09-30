@@ -20,7 +20,7 @@ export default function OnboardingLayout() {
 
   const currentStep = getStepFromPath(pathname);
   const totalSteps = 4; // Total number of onboarding steps
-  // const isLastStep = currentStep === totalSteps - 1;
+  const isLastStep = currentStep === totalSteps - 1;
 
   const handleNext = () => {
     switch (currentStep) {
@@ -83,7 +83,7 @@ export default function OnboardingLayout() {
             <Button.Label
               style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}
             >
-              Next
+              {isLastStep ? 'Get Started' : 'Next'}
             </Button.Label>
           </Button>
 
