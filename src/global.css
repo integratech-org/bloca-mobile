@@ -9,3 +9,127 @@
  *   - If global.css is in src/styles/: ../../node_modules/heroui-native/lib
  */
 @source '../node_modules/heroui-native/lib';
+
+@theme {
+  --font-normal: 'Inter_400Regular';
+  --font-medium: 'Inter_500Medium';
+  --font-semibold: 'Inter_600SemiBold';
+  --font-bold: 'Inter_700Bold';
+}
+
+@layer theme {
+  :root {
+    @variant light {
+      /* Base Colors */
+      --background: oklch(0.9746 0.0051 67.764);
+      --foreground: oklch(0.2224 0.0225 47.6832);
+
+      /* Surface: Used for non-overlay components (cards, accordions, disclosure groups) */
+      --surface: oklch(1 0 0);
+      --surface-foreground: oklch(0.2224 0.0225 47.6832);
+
+      --surface-secondary: oklch(0.9473 0.0063 75.4057);
+      --surface-secondary-foreground: oklch(0.2224 0.0225 47.6832);
+
+      --surface-tertiary: oklch(0.92 0.01 70);
+      --surface-tertiary-foreground: oklch(0.2224 0.0225 47.6832);
+
+      /* Overlay: Used for floating/overlay components (dialogs, popovers, modals, menus) */
+      --overlay: oklch(1 0 0);
+      --overlay-foreground: oklch(0.2224 0.0225 47.6832);
+      /* backdrop if needed place here */
+
+      --muted: oklch(0.5048 0.0208 59.1586);
+
+      --default: oklch(0.9473 0.0063 75.4057);
+      --default-foreground: oklch(0.2224 0.0225 47.6832);
+
+      /* Accent */
+      --accent: oklch(0.5675 0.1284 44.2905);
+      --accent-foreground: oklch(1 0 0);
+
+      /* Form Field Defaults - Colors */
+      --field-background: oklch(1 0 0);
+      --field-foreground: oklch(0.2224 0.0225 47.6832);
+      --field-placeholder: var(--muted);
+      --field-border: oklch(0.8949 0.0251 49.7236);
+
+      /* Status Colors */
+      --success: oklch(71.5% 0.126 154.4);
+      --success-foreground: oklch(0.25 0.06 154.4);
+
+      --warning: oklch(77.1% 0.117 87.6);
+      --warning-foreground: oklch(0.3 0.07 87.6);
+
+      --danger: oklch(0.6342 0.1808 23.8227);
+      --danger-foreground: oklch(1 0 0);
+
+      /* Component Colors */
+      --segment: oklch(1 0 0);
+      --segment-foreground: oklch(0.2224 0.0225 47.6832);
+
+      /* Misc Colors */
+      --border: oklch(0.8949 0.0251 49.7236);
+      --separator: oklch(0.8949 0.0251 49.7236);
+      --focus: var(--accent);
+      --link: oklch(0.5675 0.1284 44.2905);
+
+      /* place shadow here if needed */
+    }
+
+    @variant dark {
+      /* Base Colors */
+      --background: oklch(0.1878 0.0181 50.3007);
+      --foreground: oklch(0.8949 0.0251 49.7236);
+
+      /* Surface: Used for non-overlay components (cards, accordions, disclosure groups) */
+      --surface: oklch(0.2306 0.0232 51.4691);
+      --surface-foreground: oklch(0.8949 0.0251 49.7236);
+
+      --surface-secondary: oklch(0.2722 0.0222 51.733);
+      --surface-secondary-foreground: oklch(0.8949 0.0251 49.7236);
+
+      --surface-tertiary: oklch(0.31 0.022 51.733);
+      --surface-tertiary-foreground: oklch(0.8949 0.0251 49.7236);
+
+      /* Overlay: Used for floating/overlay components (dialogs, popovers, modals, menus) */
+      --overlay: oklch(0.2306 0.0232 51.4691);
+      --overlay-foreground: oklch(0.8949 0.0251 49.7236);
+
+      --muted: oklch(0.673 0.026 50.9966);
+
+      --default: oklch(0.2722 0.0222 51.733);
+      --default-foreground: oklch(0.8949 0.0251 49.7236);
+
+      /* Accent */
+      --accent: oklch(0.5675 0.1284 44.2905);
+      --accent-foreground: oklch(1 0 0);
+
+      /* Form Field Defaults - Colors */
+      --field-background: oklch(0.2306 0.0232 51.4691);
+      --field-foreground: oklch(0.8949 0.0251 49.7236);
+      --field-placeholder: var(--muted);
+      --field-border: oklch(0.2722 0.0222 51.733);
+
+      /* Status Colors */
+      --success: oklch(0.62 0.13 154.4);
+      --success-foreground: oklch(0.98 0.01 154.4);
+
+      --warning: oklch(0.72 0.115 87.6);
+      --warning-foreground: oklch(0.2 0.04 87.6);
+
+      --danger: oklch(0.4087 0.1353 25.5161);
+      --danger-foreground: oklch(1 0 0);
+
+      /* Component Colors */
+      --segment: oklch(0.2306 0.0232 51.4691);
+      --segment-foreground: oklch(0.8949 0.0251 49.7236);
+
+      /* Misc Colors */
+      --border: oklch(0.2722 0.0222 51.733);
+      --separator: oklch(0.2722 0.0222 51.733);
+      --focus: var(--accent);
+      --link: oklch(0.5675 0.1284 44.2905);
+    }
+  }
+}
