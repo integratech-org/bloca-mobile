@@ -4,7 +4,7 @@ import { View } from 'react-native';
 
 export default function DashboardScreen() {
   return (
-    <View>
+    <View className='bg-background flex-1'>
       <Link href='/notifications' asChild>
         <Button>Notifications</Button>
       </Link>
