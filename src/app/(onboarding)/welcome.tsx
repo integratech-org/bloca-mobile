@@ -2,8 +2,22 @@ import { View, Text, ScrollView } from 'react-native';
 import { Image } from 'expo-image';
 import { Button } from 'heroui-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
+import ProgressDots from '@/components/progress-dots';
 
 export default function WelcomeScreen() {
+  const router = useRouter();
+
+  // handle navigation to the next screen
+  const handleNext = () => {
+    router.push('/(onboarding)/welcome-page2');
+  };
+
+  // handle navigation to the sign-in screen
+  const handleSkip = () => {
+    router.push('/(auth)/sign-in');
+  };
+
   return (
     <SafeAreaView
       className='flex-1 bg-white'
