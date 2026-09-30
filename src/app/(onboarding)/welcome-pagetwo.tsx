@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 
-export default function WelcomeScreen2() {
+export default function WelcomePageTwo() {
   return (
     <>
       <View>
