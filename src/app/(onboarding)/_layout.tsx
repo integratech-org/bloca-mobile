@@ -1,11 +1,48 @@
 import ProgressDots from '@/components/progress-dots';
 import { Image } from 'expo-image';
-import { Slot } from 'expo-router';
+import { Slot, usePathname, useRouter } from 'expo-router';
 import { Button } from 'heroui-native';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function OnboardingLayout() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // map the current path to a step number for the progress dots
+  const getStepFromPath = (path: string): number => {
+    if (path.includes('welcome')) return 0;
+    if (path.includes('welcome-page2')) return 1;
+    if (path.includes('welcome-page3')) return 2;
+    if (path.includes('welcome-page4')) return 3;
+    return 0; // Default to step 0 if no match
+  };
+
+  const currentStep = getStepFromPath(pathname);
+  const totalSteps = 4; // Total number of onboarding steps
+  // const isLastStep = currentStep === totalSteps - 1;
+
+  const handleNext = () => {
+    switch (currentStep) {
+      case 0:
+        router.push('/(onboarding)/welcome-pagetwo');
+        break;
+      case 1:
+        router.push('/(onboarding)/welcome-pagethree');
+        break;
+      case 2:
+        router.push('/(onboarding)/welcome-pagefour');
+        break;
+      case 3:
+        router.push('/(auth)/sign-in');
+        break;
+    }
+  };
+
+  const handleSkip = () => {
+    router.push('/(auth)/sign-in');
+  };
+
   return (
     <SafeAreaView
       className='flex-1 bg-white'
@@ -42,7 +79,7 @@ export default function OnboardingLayout() {
 
         {/* Button */}
         <View className='gap-2 px-4'>
-          <Button>
+          <Button onPress={handleNext}>
             <Button.Label
               style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}
             >
@@ -50,7 +87,7 @@ export default function OnboardingLayout() {
             </Button.Label>
           </Button>
 
-          <Button variant='outline'>
+          <Button variant='outline' onPress={handleSkip}>
             <Button.Label
               style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}
             >
