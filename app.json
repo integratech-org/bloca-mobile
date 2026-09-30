@@ -7,8 +7,10 @@
     "icon": "./assets/images/icon.png",
     "scheme": "blocamobile",
     "userInterfaceStyle": "automatic",
+    "backgroundColor": "#f9f6f3",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.integratech.bloca"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +20,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.integratech.bloca"
+      "package": "com.integratech.bloca",
+      "backgroundColor": "#f9f6f3"
     },
     "web": {
       "output": "static",
@@ -34,7 +37,9 @@
           "imageWidth": 76
         }
       ],
-      "@react-native-vector-icons/material-design-icons"
+      "@react-native-vector-icons/material-design-icons",
+      "expo-system-ui",
+      "expo-status-bar"
     ],
     "experiments": {
       "typedRoutes": true,
