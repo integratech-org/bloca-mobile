@@ -1,4 +1,4 @@
-export type BatchLogStatus = 'pass' | 'suggestion' | 'fail';
+export type BatchStatus = 'pass' | 'suggestion' | 'fail';
 
 export interface BatchLog {
   id: string;
@@ -6,5 +6,5 @@ export interface BatchLog {
   timestamp: string;
   weight: number;
   operator: string;
-  status: BatchLogStatus;
+  status: BatchStatus;
 }
