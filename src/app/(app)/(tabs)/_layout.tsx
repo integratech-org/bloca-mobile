@@ -17,6 +17,7 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        popToTopOnBlur: true,
         tabBarLabelStyle: {
           fontFamily: 'Inter_500Medium',
           fontSize: 9,
