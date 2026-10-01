@@ -10,7 +10,11 @@ interface Props {
   edges?: Edge[];
 }
 
-export function Screen({ children, className, edges }: Props) {
+export function Screen({
+  children,
+  className,
+  edges = ['left', 'right'],
+}: Props) {
   return (
     <StyledSafeAreaView
       edges={edges}
