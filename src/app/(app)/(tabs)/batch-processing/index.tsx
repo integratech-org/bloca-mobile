@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native';
+import { Screen } from '@/components/screen';
+import { Typography } from 'heroui-native';
 
 export default function BatchProcessingScreen() {
   return (
-    <View>
-      <Text>Batch Processing Screen</Text>
-    </View>
+    <Screen>
+      <Typography.Heading>Batch Processing Screen</Typography.Heading>
+    </Screen>
   );
 }

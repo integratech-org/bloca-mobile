@@ -14,7 +14,6 @@ import {
 } from '@expo-google-fonts/inter';
 import { useColorScheme } from 'react-native';
 import { useEffect } from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function RootLayout() {
   const scheme = useColorScheme();
@@ -35,13 +34,11 @@ export default function RootLayout() {
   }
 
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <HeroUINativeProvider>
-          <StatusBar style='auto' />
-          <Stack screenOptions={{ headerShown: false }} />
-        </HeroUINativeProvider>
-      </GestureHandlerRootView>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <HeroUINativeProvider>
+        <StatusBar style='auto' />
+        <Stack screenOptions={{ headerShown: false }} />
+      </HeroUINativeProvider>
+    </GestureHandlerRootView>
   );
 }

@@ -1,10 +1,10 @@
+import { Screen } from '@/components/screen';
 import { Link } from 'expo-router';
 import { Button } from 'heroui-native';
-import { View } from 'react-native';
 
 export default function DashboardScreen() {
   return (
-    <View className='bg-background flex-1'>
+    <Screen>
       <Link href='/notifications' asChild>
         <Button>Notifications</Button>
       </Link>
@@ -12,6 +12,6 @@ export default function DashboardScreen() {
       <Link href='/sign-in' asChild>
         <Button>Auth</Button>
       </Link>
-    </View>
+    </Screen>
   );
 }
