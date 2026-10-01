@@ -1,5 +1,5 @@
 import { tv, Typography } from 'heroui-native';
-import { BatchLogStatus } from '../types';
+import { BatchStatus } from '../types';
 import { View } from 'react-native';
 import { STATUS_CONFIG } from '../constants';
 
@@ -14,14 +14,13 @@ const badge = tv({
   },
 });
 
-export default function StatusBadge({ status }: { status: BatchLogStatus }) {
+export default function StatusBadge({ status }: { status: BatchStatus }) {
+  const { listLabel: label } = STATUS_CONFIG[status];
   const { root, text } = badge({ status });
 
   return (
     <View className={root()}>
-      <Typography.Paragraph className={text()}>
-        {STATUS_CONFIG[status].label}
-      </Typography.Paragraph>
+      <Typography.Paragraph className={text()}>{label}</Typography.Paragraph>
     </View>
   );
 }
