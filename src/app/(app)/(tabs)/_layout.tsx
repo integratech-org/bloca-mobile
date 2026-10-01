@@ -57,7 +57,6 @@ export default function TabsLayout() {
       <Tabs.Screen
         name='batch-processing'
         options={{
-          title: '',
           tabBarButton: (props) => (
             <View className='flex-1 items-center justify-center'>
               <Pressable
