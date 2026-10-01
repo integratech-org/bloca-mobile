@@ -1,5 +1,5 @@
 import { Screen } from '@/components/screen';
-import BatchLogItem from '@/features/history/components/batch-log-item';
+import BatchLogItemCard from '@/features/history/components/batch-log-item-card';
 import { mockBatchLogs } from '@/features/history/data/mock-batch-logs';
 import { FlatList, View } from 'react-native';
 
@@ -9,9 +9,10 @@ export default function HistoryScreen() {
       <FlatList
         data={mockBatchLogs}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <BatchLogItem batch={item} />}
+        renderItem={({ item }) => <BatchLogItemCard batch={item} />}
         ItemSeparatorComponent={() => <View className='h-2' />}
         showsVerticalScrollIndicator={false}
+        contentContainerClassName='p-4'
       />
     </Screen>
   );
