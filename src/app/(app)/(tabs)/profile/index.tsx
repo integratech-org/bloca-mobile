@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native';
+import { Screen } from '@/components/screen';
+import { Typography } from 'heroui-native';
 
 export default function ProfileScreen() {
   return (
-    <View>
-      <Text>Profile Screen</Text>
-    </View>
+    <Screen>
+      <Typography.Heading>Profile Screen</Typography.Heading>
+    </Screen>
   );
 }
