@@ -59,15 +59,15 @@ export default function TabsLayout() {
         options={{
           title: '',
           tabBarButton: (props) => (
-            <View className='flex-1 items-center'>
+            <View className='flex-1 items-center justify-center'>
               <Pressable
                 onPress={props.onPress}
                 onLongPress={props.onLongPress}
                 accessibilityRole='button'
                 accessibilityLabel='Batch processing'
-                className='bg-accent -mt-5 size-16 items-center justify-center rounded-2xl shadow-lg'
+                className='bg-accent h-10 w-16 items-center justify-center rounded-2xl shadow-lg'
               >
-                <MaterialDesignIcons name='plus' color={accentFg} size={36} />
+                <MaterialDesignIcons name='plus' color={accentFg} size={30} />
               </Pressable>
             </View>
           ),
