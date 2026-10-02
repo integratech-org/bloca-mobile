@@ -1,6 +1,6 @@
 import { tv } from 'heroui-native';
 import { BatchStatus } from '../types';
-import { STATUS_CONFIG } from '../constants';
+import { STATUS_CONFIG } from '../constants/status-config';
 import { View } from 'react-native';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 

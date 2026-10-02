@@ -1,7 +1,7 @@
 import { tv, Typography } from 'heroui-native';
 import { BatchStatus } from '../types';
 import { View } from 'react-native';
-import { STATUS_CONFIG } from '../constants';
+import { STATUS_CONFIG } from '../constants/status-config';
 
 const badge = tv({
   slots: { root: 'rounded-full px-2 py-1', text: 'text-xs font-bold' },
