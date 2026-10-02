@@ -20,6 +20,13 @@ export default function SignInScreen() {
   const hanldeForgotPassword = () => {
     router.push('/forgot-password');
   };
+
+  const handleLogin = () => {
+    // To do : Implement Authentication
+    // For now navigate only to dashboard
+    router.replace('/(app)/(tabs)/(dashboard)');
+  };
+
   return (
     <Screen edges={['top', 'left', 'right', 'bottom']}>
       <ScrollView
@@ -104,7 +111,7 @@ export default function SignInScreen() {
 
           {/* Login Button */}
           <View className='mt-4 mb-4 gap-4'>
-            <Button> Login </Button>
+            <Button onPress={handleLogin}> Login </Button>
 
             <Alert status='warning' className='bg-[#FFBC9D]/50'>
               <Alert.Indicator />
@@ -117,16 +124,6 @@ export default function SignInScreen() {
             </Alert>
           </View>
         </View>
-
-        {/* <View>
-        <Link href='/forgot-password' asChild>
-          <Button>Forgot Password</Button>
-        </Link>
-
-        <Link href='/' asChild>
-          <Button>Back</Button>
-        </Link>
-      </View> */}
       </ScrollView>
     </Screen>
   );
