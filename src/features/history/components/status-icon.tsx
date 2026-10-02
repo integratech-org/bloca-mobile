@@ -6,7 +6,7 @@ import { StyledMaterialDesignIcons } from '@/components/styled-material-design-i
 
 const statusIcon = tv({
   slots: {
-    tile: 'size-8 items-center justify-center rounded-lg',
+    tile: 'size-10 items-center justify-center rounded-lg',
     icon: '',
   },
   variants: {
@@ -23,7 +23,7 @@ export default function StatusIcon({ status }: { status: BatchStatus }) {
   const { tile, icon } = statusIcon({ status });
   return (
     <View className={tile()}>
-      <StyledMaterialDesignIcons name={name} size={24} className={icon()} />
+      <StyledMaterialDesignIcons name={name} size={22} className={icon()} />
     </View>
   );
 }
