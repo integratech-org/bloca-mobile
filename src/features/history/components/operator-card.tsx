@@ -1,3 +1,4 @@
+import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Avatar, Card, Typography } from 'heroui-native';
 import { View } from 'react-native';
 
@@ -12,7 +13,13 @@ export default function OperatorCard({ operator }: Props) {
         <View className='flex-row items-center gap-3'>
           <Avatar>
             <Avatar.Image />
-            <Avatar.Fallback />
+            <Avatar.Fallback>
+              <StyledMaterialDesignIcons
+                name='account-outline'
+                size={22}
+                className='text-accent'
+              />
+            </Avatar.Fallback>
           </Avatar>
 
           <View>

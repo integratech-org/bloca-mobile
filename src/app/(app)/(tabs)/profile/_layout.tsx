@@ -7,6 +7,23 @@ export default function ProfileLayout() {
   return (
     <Stack screenOptions={screenOptions}>
       <Stack.Screen name='index' options={{ headerTitle: 'Profile' }} />
+      <Stack.Screen
+        name='change-email'
+        options={{ headerTitle: 'Change Email' }}
+      />
+      <Stack.Screen
+        name='change-contact'
+        options={{ headerTitle: 'Change Contact' }}
+      />
+      <Stack.Screen
+        name='edit-address'
+        options={{ headerTitle: 'Edit Address' }}
+      />
+      <Stack.Screen
+        name='change-password'
+        options={{ headerTitle: 'Change Password' }}
+      />
+      <Stack.Screen name='theme' options={{ headerTitle: 'Theme' }} />
     </Stack>
   );
 }
