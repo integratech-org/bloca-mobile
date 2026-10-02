@@ -1,6 +1,7 @@
 import { Screen } from '@/components/screen';
 import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
 import { Image } from 'expo-image';
+import { useRouter } from 'expo-router';
 import {
   Alert,
   Button,
@@ -13,6 +14,12 @@ import {
 import { ScrollView, Text, View } from 'react-native';
 
 export default function SignInScreen() {
+  const router = useRouter();
+
+  // Add button handler for routing to forgot password page
+  const hanldeForgotPassword = () => {
+    router.push('/forgot-password');
+  };
   return (
     <Screen edges={['top', 'left', 'right', 'bottom']}>
       <ScrollView
@@ -80,7 +87,7 @@ export default function SignInScreen() {
 
           {/* Forgot Password Link */}
           <View className='mt-2 self-end'>
-            <LinkButton>
+            <LinkButton onPress={hanldeForgotPassword}>
               <LinkButton.Label>
                 <Text
                   style={{
