@@ -1,4 +1,4 @@
-import ProgressDots from '@/components/progress-dots';
+import StepIndicator from '@/components/step-indicator';
 import { Image } from 'expo-image';
 import { Slot, usePathname, useRouter } from 'expo-router';
 import { Button } from 'heroui-native';
@@ -79,7 +79,7 @@ export default function OnboardingLayout() {
 
         {/* Progress Dots */}
         <View className='items-center justify-center p-4'>
-          <ProgressDots total={totalSteps} current={currentStep} />
+          <StepIndicator total={totalSteps} current={currentStep} />
         </View>
 
         {/* Button */}
