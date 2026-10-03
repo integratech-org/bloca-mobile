@@ -13,7 +13,7 @@ export const STATUS_CONFIG: Record<
   suggestion: {
     listLabel: 'Suggestion',
     reportLabel: 'Needs review',
-    icon: 'information-outline',
+    icon: 'information-slab-circle-outline',
   },
   fail: {
     listLabel: 'Fail',
