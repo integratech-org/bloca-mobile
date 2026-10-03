@@ -1,7 +1,7 @@
 import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
 import { Text, View } from 'react-native';
 
-export default function WelcomePageThree() {
+export default function WelcomeScreenThree() {
   // add the features to the list below
   const features = [
     {
