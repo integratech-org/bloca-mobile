@@ -1,4 +1,5 @@
 import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
+import { Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 
 export default function WelcomeScreenTwo() {
@@ -22,9 +23,9 @@ export default function WelcomeScreenTwo() {
 
       {/* Description Text */}
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}>
+        <Typography.Paragraph>
           Things you must know as an Operator on BLOCA.
-        </Text>
+        </Typography.Paragraph>
       </View>
 
       <View className='items-center justify-center px-14 py-10'>
