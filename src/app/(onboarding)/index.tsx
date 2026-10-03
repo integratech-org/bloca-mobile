@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 
 export default function WelcomeScreen() {
   return (
-    <Screen>
+    <Screen className='bg-white'>
       {/* Welcome Text */}
       <View className='px-4'>
         <Text style={{ fontFamily: 'Inter_700Bold', fontSize: 36 }}>

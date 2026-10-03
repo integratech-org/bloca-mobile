@@ -33,14 +33,23 @@ export default function RootLayout() {
     return null; // Or return a loading screen
   }
 
+  // TODO: Add real auth logic
+  const isAuthenticated = false;
+  const hasSeenOnboarding = false;
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <HeroUINativeProvider>
         <StatusBar style='auto' />
-        <Stack
-          screenOptions={{ headerShown: false }}
-          initialRouteName='(app)/(tabs)/(dashboard)'
-        />
+        <Stack screenOptions={{ headerShown: false }}>
+          {!isAuthenticated && !hasSeenOnboarding ? (
+            <Stack.Screen name='(onboarding)' />
+          ) : !isAuthenticated ? (
+            <Stack.Screen name='(auth)' />
+          ) : (
+            <Stack.Screen name='(app)' />
+          )}
+        </Stack>
       </HeroUINativeProvider>
     </GestureHandlerRootView>
   );
