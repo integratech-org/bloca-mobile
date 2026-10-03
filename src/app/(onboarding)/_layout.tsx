@@ -11,7 +11,12 @@ export default function OnboardingLayout() {
 
   // map the current path to a step number for the progress dots
   const getStepFromPath = (path: string): number => {
-    if (path.includes('welcome') && !path.includes('page')) return 0;
+    if (
+      path === '/(onboarding)' ||
+      path === '/(onboarding)/' ||
+      !path.includes('page')
+    )
+      return 0;
     if (path.includes('welcome-pagetwo')) return 1;
     if (path.includes('welcome-pagethree')) return 2;
     if (path.includes('welcome-pagefour')) return 3;
