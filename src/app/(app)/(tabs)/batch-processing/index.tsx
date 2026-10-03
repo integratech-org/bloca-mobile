@@ -16,7 +16,7 @@ export default function BatchProcessingScreen() {
           <StyledMaterialDesignIcons
             name='play'
             size={20}
-            className='text-foreground'
+            className='text-accent-foreground'
           />
 
           <Button.Label>START NEW BATCH</Button.Label>
