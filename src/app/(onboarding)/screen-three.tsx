@@ -1,4 +1,5 @@
 import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
+import { Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 
 export default function WelcomeScreenThree() {
@@ -28,16 +29,15 @@ export default function WelcomeScreenThree() {
   return (
     <>
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_700Bold', fontSize: 36 }}>
-          Run a Batch
-        </Text>
+        {/* Header */}
+        <Typography.Heading>Run a Batch</Typography.Heading>
       </View>
 
       {/* Description Text */}
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}>
+        <Typography.Paragraph>
           as an Operator these are your responsibilities.
-        </Text>
+        </Typography.Paragraph>
       </View>
 
       {/* Image PNG */}
