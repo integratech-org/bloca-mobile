@@ -1,9 +1,10 @@
+import { Screen } from '@/components/screen';
 import { Image } from 'expo-image';
 import { Text, View } from 'react-native';
 
 export default function WelcomePage() {
   return (
-    <>
+    <Screen>
       {/* Welcome Text */}
       <View className='px-4'>
         <Text style={{ fontFamily: 'Inter_700Bold', fontSize: 36 }}>
@@ -26,6 +27,6 @@ export default function WelcomePage() {
           contentFit='contain'
         />
       </View>
-    </>
+    </Screen>
   );
 }
