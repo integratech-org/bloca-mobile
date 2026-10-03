@@ -1,4 +1,4 @@
-import { Card, Surface, Typography } from 'heroui-native';
+import { Surface } from 'heroui-native';
 import { View } from 'react-native';
 import { LegendItem } from './legend-item';
 import { useCSSVariable } from 'uniwind';
