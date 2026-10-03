@@ -1,5 +1,5 @@
 import { Screen } from '@/components/screen';
-import BatchDetailsCard from '@/features/history/components/batch-details-card';
+import BatchDetailsCard from '@/features/history/components/batch-details-section';
 import MaterialCompositionCard from '@/features/history/components/material-composition-card';
 import OperatorCard from '@/features/history/components/operator-card';
 import PredictedStrengthCard from '@/features/history/components/predicted-strength-card';
