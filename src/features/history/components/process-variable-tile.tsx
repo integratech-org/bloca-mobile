@@ -1,6 +1,6 @@
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import { Card, PressableFeedback, Typography } from 'heroui-native';
-import { Pressable, View } from 'react-native';
+import { Card, cn, PressableFeedback, Typography } from 'heroui-native';
+import { View } from 'react-native';
 import {
   PROCESS_VARIABLE_INFO,
   ProcessVariableKey,
@@ -9,12 +9,14 @@ import {
 interface Props {
   variable: ProcessVariableKey;
   value: string;
+  active?: boolean;
   onPress?: () => void;
 }
 
 export default function ProcessVariableTile({
   variable,
   value,
+  active = false,
   onPress,
 }: Props) {
   const { icon, label } = PROCESS_VARIABLE_INFO[variable];
@@ -22,7 +24,10 @@ export default function ProcessVariableTile({
   return (
     <PressableFeedback
       onPress={onPress}
-      className='flex-1 overflow-hidden rounded-2xl'
+      className={cn(
+        'flex-1 overflow-hidden rounded-2xl border',
+        active ? 'border-accent' : 'border-transparent',
+      )}
     >
       <Card className='gap-2 rounded-2xl'>
         <Card.Title>
