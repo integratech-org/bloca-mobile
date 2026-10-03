@@ -10,6 +10,11 @@ export default function BatchProcessingLayout() {
         name='index'
         options={{ headerTitle: 'Batch Processing' }}
       />
+      <Stack.Screen name='new-batch' options={{ headerTitle: 'New Batch' }} />
+      <Stack.Screen
+        name='active-tracking'
+        options={{ headerTitle: 'Active Tracking' }}
+      />
     </Stack>
   );
 }
