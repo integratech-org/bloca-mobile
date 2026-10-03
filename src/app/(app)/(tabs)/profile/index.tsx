@@ -61,12 +61,10 @@ export default function ProfileScreen() {
         <Button variant='danger-soft' className='rounded-2xl'>
           <StyledMaterialDesignIcons
             name='logout'
-            size={18}
-            className='text-danger'
+            size={20}
+            className='text-danger-soft-foreground'
           />
-          <Typography.Paragraph type='body-xs' className='text-danger'>
-            Logout
-          </Typography.Paragraph>
+          <Button.Label>Log Out</Button.Label>
         </Button>
       </ScrollView>
     </Screen>
