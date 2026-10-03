@@ -1,6 +1,6 @@
-import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
+import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Typography } from 'heroui-native';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 export default function WelcomeScreenThree() {
   // add the features to the list below
@@ -46,15 +46,15 @@ export default function WelcomeScreenThree() {
         {features.map((feature) => (
           <View key={feature.text} className='flex-row items-center gap-2 py-2'>
             <View className='flex h-14 w-14 items-center justify-center rounded-full bg-[#C45A27]'>
-              <MaterialDesignIcons
+              <StyledMaterialDesignIcons
                 name={feature.icon}
                 size={32}
                 color='#FFFFFF'
               />
             </View>
-            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}>
+            <Typography.Paragraph className='text-wrap' type='body-sm'>
               {feature.text}
-            </Text>
+            </Typography.Paragraph>
           </View>
         ))}
       </View>
