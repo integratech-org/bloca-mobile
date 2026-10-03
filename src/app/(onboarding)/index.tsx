@@ -1,5 +1,6 @@
 import { Screen } from '@/components/screen';
 import { Image } from 'expo-image';
+import { Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 
 export default function WelcomeScreen() {
@@ -14,9 +15,9 @@ export default function WelcomeScreen() {
 
       {/* Description Text */}
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}>
+        <Typography.Paragraph>
           You&apos;re set up as an Operator on BLOCA.
-        </Text>
+        </Typography.Paragraph>
       </View>
 
       {/* Image PNG */}
