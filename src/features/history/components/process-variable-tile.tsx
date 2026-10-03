@@ -1,5 +1,5 @@
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import { Card, Typography } from 'heroui-native';
+import { Card, PressableFeedback, Typography } from 'heroui-native';
 import { Pressable, View } from 'react-native';
 import {
   PROCESS_VARIABLE_INFO,
@@ -20,8 +20,11 @@ export default function ProcessVariableTile({
   const { icon, label } = PROCESS_VARIABLE_INFO[variable];
 
   return (
-    <Pressable onPress={onPress} className='flex-1'>
-      <Card variant='secondary' className='gap-2 rounded-lg'>
+    <PressableFeedback
+      onPress={onPress}
+      className='flex-1 overflow-hidden rounded-2xl'
+    >
+      <Card className='gap-2 rounded-2xl'>
         <Card.Title>
           <View className='flex-row items-center gap-1.5'>
             <StyledMaterialDesignIcons
@@ -45,6 +48,7 @@ export default function ProcessVariableTile({
           </View>
         </Card.Body>
       </Card>
-    </Pressable>
+      <PressableFeedback.Highlight />
+    </PressableFeedback>
   );
 }

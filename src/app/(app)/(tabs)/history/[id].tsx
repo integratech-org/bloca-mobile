@@ -6,7 +6,7 @@ import PredictedStrengthCard from '@/features/history/components/predicted-stren
 import ProcessVariableDetailSheet from '@/features/history/components/process-variable-detail-sheet';
 import StatusCard from '@/features/history/components/status-card';
 import { useLocalSearchParams } from 'expo-router';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 export default function QualityReportScreen() {
   const { id } = useLocalSearchParams();
@@ -14,11 +14,13 @@ export default function QualityReportScreen() {
   return (
     <Screen>
       <ScrollView
-        contentContainerClassName='p-4 gap-3'
+        contentContainerClassName='p-4 gap-6'
         showsVerticalScrollIndicator={false}
       >
-        <StatusCard id='B-1' status='pass' timestamp='2023-08-15 14:30:00' />
-        <OperatorCard operator='John Doe' />
+        <View className='gap-3'>
+          <StatusCard id='B-1' status='pass' timestamp='2023-08-15 14:30:00' />
+          <OperatorCard operator='John Doe' />
+        </View>
         <PredictedStrengthCard value={4.61} />
         <MaterialCompositionCard plasticPct={80} />
         <BatchDetailsCard
