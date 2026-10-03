@@ -1,10 +1,5 @@
 import '@/global.css';
 
-import { Stack } from 'expo-router';
-import { HeroUINativeProvider } from 'heroui-native';
-import { StatusBar } from 'expo-status-bar';
-import * as SystemUI from 'expo-system-ui';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {
   Inter_400Regular,
   Inter_500Medium,
@@ -12,8 +7,13 @@ import {
   Inter_700Bold,
   useFonts,
 } from '@expo-google-fonts/inter';
-import { useColorScheme } from 'react-native';
+import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import * as SystemUI from 'expo-system-ui';
+import { HeroUINativeProvider } from 'heroui-native';
 import { useEffect } from 'react';
+import { useColorScheme } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function RootLayout() {
   const scheme = useColorScheme();
@@ -37,7 +37,10 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <HeroUINativeProvider>
         <StatusBar style='auto' />
-        <Stack screenOptions={{ headerShown: false }} />
+        <Stack
+          screenOptions={{ headerShown: false }}
+          initialRouteName='(app)/(tabs)/(dashboard)'
+        />
       </HeroUINativeProvider>
     </GestureHandlerRootView>
   );
