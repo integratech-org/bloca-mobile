@@ -17,7 +17,7 @@ export default function StepIndicator({ total, current }: Props) {
           <View
             key={index}
             className={`h-2 rounded-full ${
-              isActive ? 'w-8 bg-[#C45A27]' : 'w-2 bg-[#D9D9D9]'
+              isActive ? 'bg-accent w-8' : 'bg-muted w-2'
             }`}
           />
         );
