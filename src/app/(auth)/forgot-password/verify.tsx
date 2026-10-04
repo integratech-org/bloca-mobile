@@ -1,17 +1,9 @@
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 import { Button, InputOTP, LinkButton, Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ForgotPasswordVerifyScreen() {
-  const router = useRouter();
-
-  // Added handling of reset page
-  const handleResetPage = () => {
-    // TODO : implement verification of OTP
-    router.push('/forgot-password/reset');
-  };
-
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
@@ -69,7 +61,7 @@ export default function ForgotPasswordVerifyScreen() {
 
         {/* Verify Button */}
         <View className='mt-20'>
-          <Button onPress={handleResetPage}>
+          <Button onPress={() => router.push('/forgot-password/reset')}>
             <Button.Label
               style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16 }}
             >
