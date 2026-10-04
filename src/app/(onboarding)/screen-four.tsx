@@ -1,4 +1,4 @@
-import MaterialDesignIcons, {
+import StyledMaterialDesignIcons, {
   type MaterialDesignIconsIconName,
 } from '@react-native-vector-icons/material-design-icons';
 import { useState } from 'react';
@@ -46,7 +46,7 @@ function ChecklistRow({
     <Pressable onPress={onPress} className='flex-row items-center gap-5'>
       {/* left icon circle */}
       <View className='h-16 w-16 items-center justify-center rounded-full bg-[#B85C38]'>
-        <MaterialDesignIcons name={step.icon} size={28} color='white' />
+        <StyledMaterialDesignIcons name={step.icon} size={28} color='white' />
       </View>
 
       {/* text */}
@@ -66,7 +66,7 @@ function ChecklistRow({
           done ? 'border-green-500 bg-green-200' : 'border-neutral-400'
         }`}
       >
-        <MaterialDesignIcons
+        <StyledMaterialDesignIcons
           name={done ? 'check' : 'chevron-right'}
           size={28}
           color='black'
