@@ -1,8 +1,9 @@
 import StyledMaterialDesignIcons, {
   type MaterialDesignIconsIconName,
 } from '@react-native-vector-icons/material-design-icons';
+import { Typography } from 'heroui-native';
 import { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 // type Step = { id: string; icon: IconName; title: string; description: string };
 interface Step {
@@ -51,13 +52,10 @@ function ChecklistRow({
 
       {/* text */}
       <View className='flex-1'>
-        <Text className='text-foreground text-xl font-bold'>{step.title}</Text>
-        <Text
-          style={{ fontFamily: 'Inter_400Regular', fontSize: 12 }}
-          className='text-foreground'
-        >
+        <Typography.Heading type='h6'>{step.title} </Typography.Heading>
+        <Typography.Paragraph type='body-xs'>
           {step.description}
-        </Text>
+        </Typography.Paragraph>
       </View>
 
       {/* right circle: chevron when pending, check when done */}
@@ -87,16 +85,13 @@ export default function WelcomeScreenFour() {
   return (
     <>
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_700Bold', fontSize: 36 }}>
-          Sign-off Checklist
-        </Text>
+        {/* Heading */}
+        <Typography.Heading>Sign-off Checklist</Typography.Heading>
       </View>
 
       {/* Description Text */}
       <View className='px-4'>
-        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 14 }}>
-          Check these if your ready to go
-        </Text>
+        <Typography> Check these if your ready to go </Typography>
       </View>
 
       {/* Checklist Items */}
