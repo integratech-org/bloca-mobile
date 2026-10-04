@@ -6,7 +6,7 @@ import { View } from 'react-native';
 
 export function AuthHeader() {
   return (
-    <View className='relative mt-10 mb-8 flex-row items-center justify-center'>
+    <View className='relative mt-10 mb-2 flex-row items-center justify-center'>
       <Button
         isIconOnly
         variant='ghost'
