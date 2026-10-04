@@ -1,6 +1,6 @@
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
 import { Image } from 'expo-image';
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 import {
   Button,
   InputGroup,
@@ -12,15 +12,6 @@ import { Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ForgotPasswordScreen() {
-  const router = useRouter();
-
-  // Added verify page handling
-  const handleSendCode = () => {
-    // TODO: Impement send code logic
-    // For now navigate to verify screen
-    router.push('/forgot-password/verify');
-  };
-
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
@@ -71,7 +62,7 @@ export default function ForgotPasswordScreen() {
 
         {/* Send Code Button */}
         <View>
-          <Button onPress={handleSendCode}>
+          <Button onPress={() => router.push('/forgot-password/verify')}>
             <Button.Label
               style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16 }}
             >
