@@ -63,7 +63,7 @@ export default function ForgotPasswordScreen() {
         {/* Illustration Placehoder  */}
         <View className='items-center justify-center'>
           <Image
-            source={require('@/assets/images/authentication-illustration.svg')}
+            source={require('@/assets/images/holding-phone-illustration.svg')}
             style={{ width: 220, height: 220 }}
             contentFit='contain'
           />
