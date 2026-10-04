@@ -1,7 +1,6 @@
-import { View } from 'react-native';
-import ProcessVariableTile from './process-variable-tile';
 import { useProcessVariableSheetStore } from '../stores/process-variable-sheet-store';
 import { Section } from '@/components/section';
+import ProcessVariableGrid from '@/components/process-variable/process-variable-grid';
 
 interface Props {
   maxTemp: number;
@@ -35,19 +34,12 @@ export default function BatchDetailsSection({
   ] as const;
 
   return (
-    <Section title='Batch details'>
-      <View className='flex-row flex-wrap gap-2'>
-        {tiles.map((t) => (
-          <View key={t.variable} className='grow basis-[48%]'>
-            <ProcessVariableTile
-              variable={t.variable}
-              value={t.value}
-              active={activeVariable === t.variable}
-              onPress={() => open(t.variable)}
-            />
-          </View>
-        ))}
-      </View>
+    <Section title='Batch Details'>
+      <ProcessVariableGrid
+        tiles={tiles}
+        activeVariable={activeVariable}
+        onPressTile={open}
+      />
     </Section>
   );
 }
