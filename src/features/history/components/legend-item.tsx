@@ -1,15 +1,13 @@
 import { Typography } from 'heroui-native';
 import { View } from 'react-native';
 
-export function LegendItem({
-  color,
-  label,
-  percent,
-}: {
+interface Props {
   color: string;
   label: string;
-  percent: number;
-}) {
+  percent?: number;
+}
+
+export function LegendItem({ color, label, percent }: Props) {
   return (
     <View className='flex-row items-center gap-2'>
       <View
@@ -18,9 +16,11 @@ export function LegendItem({
       />
       <View className='flex-row gap-1 text-xs'>
         <Typography.Paragraph type='body-xs'>{label}</Typography.Paragraph>
-        <Typography.Paragraph type='body-xs' className='text-muted'>
-          {percent}%
-        </Typography.Paragraph>
+        {percent !== undefined && (
+          <Typography.Paragraph type='body-xs' className='text-muted'>
+            {percent}%
+          </Typography.Paragraph>
+        )}
       </View>
     </View>
   );
