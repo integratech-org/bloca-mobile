@@ -74,7 +74,7 @@ function ChecklistRow({
   );
 }
 
-export default function WelcomeScreenFour() {
+export default function SignoffChecklistScreen() {
   const [doneIds, setDoneIds] = useState<string[]>([]);
 
   const toggle = (id: string) =>

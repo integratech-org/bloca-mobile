@@ -3,7 +3,7 @@ import { Image } from 'expo-image';
 import { Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function GetStartedScreen() {
   return (
     <Screen className='bg-white'>
       {/* Welcome Text */}
