@@ -44,7 +44,6 @@ export const PROCESS_VARIABLE_INFO = {
   compressedHeight: {
     label: 'Height',
     title: 'Compressed Height',
-
     icon: 'arrow-collapse-down',
     targetRange: '5.8-6.2 cm',
     significance:
@@ -53,7 +52,6 @@ export const PROCESS_VARIABLE_INFO = {
   powerDraw: {
     label: 'Power draw',
     title: 'Power Draw',
-
     icon: 'flash',
     targetRange: '0.2-0.3 kW',
     significance:

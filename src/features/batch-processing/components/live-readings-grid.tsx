@@ -1,6 +1,5 @@
-import { useProcessVariableSheetStore } from '../stores/process-variable-sheet-store';
-import { Section } from '@/components/section';
 import ProcessVariableGrid from '@/components/process-variable/process-variable-grid';
+import { Section } from '@/components/section';
 
 interface Props {
   maxTemp: number;
@@ -11,7 +10,7 @@ interface Props {
   powerDraw: number;
 }
 
-export default function BatchDetailsSection({
+export default function LiveReadingsGrid({
   maxTemp,
   peakPressure,
   heatingDuration,
@@ -19,14 +18,13 @@ export default function BatchDetailsSection({
   compressedHeight,
   powerDraw,
 }: Props) {
-  const open = useProcessVariableSheetStore((s) => s.open);
-  const activeVariable = useProcessVariableSheetStore((s) =>
-    s.isOpen ? s.selected : null,
-  );
-
   const tiles = [
-    { variable: 'maxTemp', value: `${maxTemp} °C` },
-    { variable: 'peakPressure', value: `${peakPressure} psi` },
+    { variable: 'maxTemp', label: 'Temperature', value: `${maxTemp} °C` },
+    {
+      variable: 'peakPressure',
+      label: 'Pressure',
+      value: `${peakPressure} psi`,
+    },
     { variable: 'heatingDuration', value: heatingDuration },
     { variable: 'coolingTime', value: coolingTime },
     { variable: 'compressedHeight', value: `${compressedHeight} cm` },
@@ -34,12 +32,8 @@ export default function BatchDetailsSection({
   ] as const;
 
   return (
-    <Section title='Batch Details'>
-      <ProcessVariableGrid
-        tiles={tiles}
-        activeVariable={activeVariable}
-        onPressTile={open}
-      />
+    <Section title='Live Readings'>
+      <ProcessVariableGrid tiles={tiles} />
     </Section>
   );
 }
