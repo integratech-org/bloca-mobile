@@ -1,12 +1,16 @@
-import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
+import MaterialDesignIcons, {
+  type MaterialDesignIconsIconName,
+} from '@react-native-vector-icons/material-design-icons';
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 
-// Any valid icon name accepted by <MaterialDesignIcons name="..." />
-type IconName = React.ComponentProps<typeof MaterialDesignIcons>['name'];
-
-// A checklist step: left icon, title and description text, and a unique id
-type Step = { id: string; icon: IconName; title: string; description: string };
+// type Step = { id: string; icon: IconName; title: string; description: string };
+interface Step {
+  id: string;
+  icon: MaterialDesignIconsIconName;
+  title: string;
+  description: string;
+}
 
 const steps: Step[] = [
   {
