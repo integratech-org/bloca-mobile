@@ -2,7 +2,7 @@ import { StyledMaterialDesignIcons } from '@/components/styled-material-design-i
 import { Typography } from 'heroui-native';
 import { View } from 'react-native';
 
-export default function WelcomeScreenThree() {
+export default function RunABatchScreen() {
   // add the features to the list below
   const features = [
     {

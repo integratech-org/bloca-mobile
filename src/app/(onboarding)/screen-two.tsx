@@ -2,7 +2,7 @@ import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-
 import { Typography } from 'heroui-native';
 import { Text, View } from 'react-native';
 
-export default function WelcomeScreenTwo() {
+export default function SafetyFirstScreen() {
   // add features array with icon and text
   const features = [
     {
