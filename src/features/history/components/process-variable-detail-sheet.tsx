@@ -1,8 +1,8 @@
 import { BottomSheet, Typography, Separator } from 'heroui-native';
 import { View } from 'react-native';
 import { useProcessVariableSheetStore } from '../stores/process-variable-sheet-store';
-import { PROCESS_VARIABLE_INFO } from '../constants/process-variable-info';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
+import { PROCESS_VARIABLE_INFO } from '@/constants/process-variable-info';
 
 export default function ProcessVariableDetailSheet() {
   const selected = useProcessVariableSheetStore((s) => s.selected);

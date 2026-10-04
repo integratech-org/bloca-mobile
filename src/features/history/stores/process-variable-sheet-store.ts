@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ProcessVariableKey } from '../constants/process-variable-info';
+import { ProcessVariableKey } from '@/constants/process-variable-info';
 
 interface ProcessVariableSheetState {
   selected: ProcessVariableKey | null;
