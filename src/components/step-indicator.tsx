@@ -3,8 +3,6 @@ import { View } from 'react-native';
 interface Props {
   total: number;
   current: number;
-  activeColor?: string;
-  inactiveColor?: string;
 }
 
 export default function StepIndicator({ total, current }: Props) {
