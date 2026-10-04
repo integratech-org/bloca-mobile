@@ -72,7 +72,7 @@ function ChecklistRow({
   );
 }
 
-export default function WelcomePageFour() {
+export default function WelcomeScreenFour() {
   const [doneIds, setDoneIds] = useState<string[]>([]);
 
   const toggle = (id: string) =>
