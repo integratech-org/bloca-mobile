@@ -14,12 +14,12 @@ export default function OnboardingLayout() {
     if (
       path === '/(onboarding)' ||
       path === '/(onboarding)/' ||
-      !path.includes('page')
+      path.includes('index')
     )
       return 0;
-    if (path.includes('welcome-pagetwo')) return 1;
-    if (path.includes('welcome-pagethree')) return 2;
-    if (path.includes('welcome-pagefour')) return 3;
+    if (path.includes('safety-first')) return 1;
+    if (path.includes('run-batch')) return 2;
+    if (path.includes('signoff-checklist')) return 3;
     return 0; // Default to step 0 if no match
   };
 
@@ -30,13 +30,13 @@ export default function OnboardingLayout() {
   const handleNext = () => {
     switch (currentStep) {
       case 0:
-        router.push('/(onboarding)/welcome-pagetwo');
+        router.push('/(onboarding)/safety-first');
         break;
       case 1:
-        router.push('/(onboarding)/welcome-pagethree');
+        router.push('/(onboarding)/run-batch');
         break;
       case 2:
-        router.push('/(onboarding)/welcome-pagefour');
+        router.push('/(onboarding)/signoff-checklist');
         break;
       case 3:
         router.push('/(auth)/sign-in');
