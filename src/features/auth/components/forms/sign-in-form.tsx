@@ -12,7 +12,7 @@ import { View } from 'react-native';
 
 export function SignInForm() {
   return (
-    <View>
+    <View className='mt-4'>
       <View className='gap-4'>
         {/* Email Field */}
         <TextField>
