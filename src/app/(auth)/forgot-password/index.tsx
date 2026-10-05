@@ -1,15 +1,9 @@
 import { Screen } from '@/components/screen';
 import { AuthHeader } from '@/features/auth/components/auth-header';
-import StyledMaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
+import { ForgotPasswordForm } from '@/features/auth/components/forms/forgot-password-form';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
-import {
-  Button,
-  InputGroup,
-  Label,
-  TextField,
-  Typography,
-} from 'heroui-native';
+import { Button, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -29,20 +23,8 @@ export default function ForgotPasswordScreen() {
             </Typography.Paragraph>
           </View>
 
-          {/* Email Input */}
-          <TextField>
-            {/* Label */}
-            <Label>
-              <Typography.Paragraph type='body-xs'>Email</Typography.Paragraph>
-            </Label>
-            {/* Input */}
-            <InputGroup>
-              <InputGroup.Prefix isDecorative>
-                <StyledMaterialDesignIcons name={'email-outline'} size={18} />
-              </InputGroup.Prefix>
-              <InputGroup.Input placeholder='Enter Email' />
-            </InputGroup>
-          </TextField>
+          {/* Forgot Password Form */}
+          <ForgotPasswordForm />
 
           {/* Illustration Placehoder  */}
           <View className='items-center justify-center'>
