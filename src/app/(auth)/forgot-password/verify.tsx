@@ -1,7 +1,8 @@
 import { Screen } from '@/components/screen';
 import { AuthHeader } from '@/features/auth/components/auth-header';
+import { VerifyForm } from '@/features/auth/components/forms/verify-form';
 import { router } from 'expo-router';
-import { Button, InputOTP, Typography } from 'heroui-native';
+import { Button, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -24,16 +25,7 @@ export default function ForgotPasswordVerifyScreen() {
 
           {/* Input OTP */}
           <View className='mt-10'>
-            <InputOTP maxLength={6}>
-              <InputOTP.Group className='flex-row gap-1.5'>
-                <InputOTP.Slot index={0} className='max-w-[45px] flex-1' />
-                <InputOTP.Slot index={1} className='max-w-[45px] flex-1' />
-                <InputOTP.Slot index={2} className='max-w-[45px] flex-1' />
-                <InputOTP.Slot index={3} className='max-w-[45px] flex-1' />
-                <InputOTP.Slot index={4} className='max-w-[45px] flex-1' />
-                <InputOTP.Slot index={5} className='max-w-[45px] flex-1' />
-              </InputOTP.Group>
-            </InputOTP>
+            <VerifyForm />
           </View>
 
           {/* Resend Count down timer */}
