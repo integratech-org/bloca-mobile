@@ -28,29 +28,19 @@ export default function SignInScreen() {
   };
 
   return (
-    <Screen edges={['top', 'left', 'right', 'bottom']}>
-      <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        showsVerticalScrollIndicator={false}
-      >
-        <View className='flex-1 px-6 pt-8'>
+    <Screen>
+      <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
+        <View className='px-6 pt-8'>
           {/* Logo Screen */}
           <View className='mb-4 items-center'>
             <Image
               source={require('@/assets/splash/bloca-splash-icon.svg')}
-              style={{ width: 80, height: 80, marginBottom: 16 }}
+              style={{ width: 80, height: 80, marginBottom: 16, marginTop: 16 }}
               contentFit='contain'
             />
-            <Typography
-              type='h1'
-              style={{
-                fontFamily: 'Inter_700Bold',
-                fontSize: 48,
-                color: '#C45A27',
-              }}
-            >
+            <Typography.Heading className='text-accent'>
               BLOCA
-            </Typography>
+            </Typography.Heading>
           </View>
 
           {/* Description */}
@@ -96,15 +86,9 @@ export default function SignInScreen() {
           <View className='mt-2 self-end'>
             <LinkButton onPress={hanldeForgotPassword}>
               <LinkButton.Label>
-                <Text
-                  style={{
-                    fontFamily: 'Inter_500Medium',
-                    fontSize: 12,
-                    color: '#C45A27',
-                  }}
-                >
+                <Typography.Paragraph className='text-accent' type='body-xs'>
                   Forgot Password
-                </Text>
+                </Typography.Paragraph>
               </LinkButton.Label>
             </LinkButton>
           </View>
