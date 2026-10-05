@@ -4,20 +4,20 @@
     "slug": "bloca-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/bloca-icon.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "blocamobile",
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#f9f6f3",
     "ios": {
-      "icon": "./assets/bloca-icon.png",
+      "icon": "./assets/bloca.ico",
       "bundleIdentifier": "com.integratech.bloca"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-bloca-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-bloca-icon-background.png",
-        "monochromeImage": "./assets/images/android-bloca-icon-monochrome.png"
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.integratech.bloca",
@@ -33,7 +33,7 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#FFFFFF",
-          "image": "./assets/splash/bloca-splash-icon.png",
+          "image": "./assets/splash/splash-icon.png",
           "imageWidth": 300
         }
       ],
