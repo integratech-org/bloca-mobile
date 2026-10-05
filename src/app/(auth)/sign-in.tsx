@@ -10,9 +10,9 @@ export default function SignInScreen() {
       <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
         <View className='px-6 pt-8'>
           {/* Logo Screen */}
-          <View className='mb-4 items-center'>
+          <View className='items-center'>
             <Image
-              source={require('@/assets/splash/bloca-splash-icon.svg')}
+              source={require('@/assets/images/bloca-icon.svg')}
               style={{ width: 80, height: 80, marginBottom: 16, marginTop: 16 }}
               contentFit='contain'
             />
@@ -22,13 +22,13 @@ export default function SignInScreen() {
           </View>
 
           {/* Description */}
-          <View className='mb-8 px-4'>
+          <View>
             <Typography.Paragraph className='text-center'>
               Sign in with the account your admin set up for you.
             </Typography.Paragraph>
           </View>
 
-          <View className='gap-4'>
+          <View>
             {/* Sign in Form */}
             <SignInForm />
           </View>
