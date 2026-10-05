@@ -21,7 +21,7 @@ export default function ForgotPasswordScreen() {
         <View className='flex-1 p-4'>
           {/* Title and Subheading*/}
           <View className='mb-6'>
-            <Typography.Heading>FORGOT PASSWORD </Typography.Heading>
+            <Typography.Heading>Forgot Password</Typography.Heading>
 
             <Typography.Paragraph>
               Enter the email your admin registered. We&apos;ll send a code to
