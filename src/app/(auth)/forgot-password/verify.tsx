@@ -1,6 +1,7 @@
 import { Screen } from '@/components/screen';
+import { AuthHeader } from '@/features/auth/components/auth-header';
 import { router } from 'expo-router';
-import { Button, InputOTP, LinkButton, Typography } from 'heroui-native';
+import { Button, InputOTP, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -8,6 +9,7 @@ export default function ForgotPasswordVerifyScreen() {
   return (
     <Screen>
       <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
+        <AuthHeader />
         <View className='p-4'>
           {/* Title and Subtitle */}
           <View className='mb-6'>
@@ -36,14 +38,10 @@ export default function ForgotPasswordVerifyScreen() {
 
           {/* Resend Count down timer */}
           <View className='mt-2 self-center'>
-            <LinkButton>
-              <LinkButton.Label>
-                <Typography.Paragraph type='body-xs'>
-                  {/* To do : implement timer */}
-                  Resend Code in --:--
-                </Typography.Paragraph>
-              </LinkButton.Label>
-            </LinkButton>
+            {/* To do : implement timer */}
+            <Typography.Paragraph type='body-xs'>
+              Resend Code in --:--
+            </Typography.Paragraph>
           </View>
 
           {/* Verify Button */}
