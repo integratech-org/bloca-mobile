@@ -2,7 +2,7 @@ import { Screen } from '@/components/screen';
 import { SignInForm } from '@/features/auth/components/forms/sign-in-form';
 import { Image } from 'expo-image';
 import { Alert, Typography } from 'heroui-native';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 export default function SignInScreen() {
   return (
@@ -38,10 +38,9 @@ export default function SignInScreen() {
             <Alert status='warning' className='bg-[#FFBC9D]/50'>
               <Alert.Indicator />
               <Alert.Content>
-                <Text>
-                  No self sign-up. New operator accounts are created by an Admin
-                  or System Admin.
-                </Text>
+                <Typography.Paragraph type='body-xs' className='text-muted'>
+                  No self sign-up. Operator accounts are created by the Admins
+                </Typography.Paragraph>
               </Alert.Content>
             </Alert>
           </View>
