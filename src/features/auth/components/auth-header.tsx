@@ -18,7 +18,7 @@ export function AuthHeader() {
 
       <View className='flex-row items-center'>
         <Image
-          source={require('@/assets/splash/bloca-splash-icon.png')}
+          source={require('@/assets/images/bloca-icon.svg')}
           style={{ width: 42, height: 42 }}
           contentFit='contain'
         />
