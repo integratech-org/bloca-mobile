@@ -1,32 +1,10 @@
 import { Screen } from '@/components/screen';
-import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
+import { SignInForm } from '@/features/auth/components/forms/sign-in-form';
 import { Image } from 'expo-image';
-import { useRouter } from 'expo-router';
-import {
-  Alert,
-  Button,
-  InputGroup,
-  Label,
-  LinkButton,
-  TextField,
-  Typography,
-} from 'heroui-native';
+import { Alert, Typography } from 'heroui-native';
 import { ScrollView, Text, View } from 'react-native';
 
 export default function SignInScreen() {
-  const router = useRouter();
-
-  // Add button handler for routing to forgot password page
-  const hanldeForgotPassword = () => {
-    router.push('/forgot-password');
-  };
-
-  const handleLogin = () => {
-    // To do : Implement Authentication
-    // For now navigate only to dashboard
-    router.replace('/(app)/(tabs)/(dashboard)');
-  };
-
   return (
     <Screen>
       <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
@@ -51,52 +29,12 @@ export default function SignInScreen() {
           </View>
 
           <View className='gap-4'>
-            {/* Email Field */}
-            <TextField>
-              <Label>
-                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12 }}>
-                  Email
-                </Text>
-              </Label>
-              <InputGroup>
-                <InputGroup.Prefix isDecorative>
-                  <MaterialDesignIcons name={'email-outline'} size={18} />
-                </InputGroup.Prefix>
-                <InputGroup.Input placeholder='Enter Email' />
-              </InputGroup>
-            </TextField>
-
-            {/* Password */}
-            <TextField>
-              <Label>
-                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12 }}>
-                  Password
-                </Text>
-              </Label>
-              <InputGroup>
-                <InputGroup.Prefix isDecorative>
-                  <MaterialDesignIcons name={'lock-outline'} size={18} />
-                </InputGroup.Prefix>
-                <InputGroup.Input placeholder='Enter Password' />
-              </InputGroup>
-            </TextField>
+            {/* Sign in Form */}
+            <SignInForm />
           </View>
 
-          {/* Forgot Password Link */}
-          <View className='mt-2 self-end'>
-            <LinkButton onPress={hanldeForgotPassword}>
-              <LinkButton.Label>
-                <Typography.Paragraph className='text-accent' type='body-xs'>
-                  Forgot Password
-                </Typography.Paragraph>
-              </LinkButton.Label>
-            </LinkButton>
-          </View>
-
-          {/* Login Button */}
-          <View className='mt-4 mb-4 gap-4'>
-            <Button onPress={handleLogin}> Login </Button>
-
+          {/* Information */}
+          <View>
             <Alert status='warning' className='bg-[#FFBC9D]/50'>
               <Alert.Indicator />
               <Alert.Content>
