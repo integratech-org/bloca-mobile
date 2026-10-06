@@ -8,7 +8,7 @@ import { WelcomeStep } from '@/features/onboarding/components/welcome/welcome-st
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
 import { useCallback, useRef, useState } from 'react';
-import { Dimensions, FlatList, ScrollView, View } from 'react-native';
+import { Dimensions, FlatList, View } from 'react-native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -61,59 +61,53 @@ export default function OnboardingScreen() {
     const isChecklistStep = item.id === '4';
 
     return (
-      <ScrollView
-        style={{ width: SCREEN_WIDTH }}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}
-      >
+      <View style={{ width: SCREEN_WIDTH }}>
         {isChecklistStep ? (
           <StepComponent onAllChecked={setChecklistCompleted} />
         ) : (
           <StepComponent />
         )}
-      </ScrollView>
+      </View>
     );
   };
 
   return (
-    <Screen edges={['left', 'right', 'bottom']}>
-      <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
-        <View className='flex-1 bg-white'>
-          <OnboardingHeader />
+    <Screen>
+      <View className='flex-1 bg-white'>
+        <OnboardingHeader />
 
-          <FlatList
-            ref={flatListRef}
-            data={steps}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            onViewableItemsChanged={onViewableItemsChanged}
-            viewabilityConfig={viewabilityConfig}
-            scrollEventThrottle={16}
-          />
+        <FlatList
+          ref={flatListRef}
+          data={steps}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          onViewableItemsChanged={onViewableItemsChanged}
+          viewabilityConfig={viewabilityConfig}
+          scrollEventThrottle={16}
+        />
 
-          <View className='items-center justify-center p-4'>
-            <StepIndicator total={steps.length} current={currentStep} />
-          </View>
-
-          <View className='gap-2 px-4 pb-4'>
-            <Button onPress={handleNext} isDisabled={isGetStartedDisabled}>
-              {isLastStep ? 'Get Started' : 'Next'}
-            </Button>
-
-            {!isLastStep && (
-              <Button
-                variant='outline'
-                onPress={() => router.push('/(auth)/sign-in')}
-              >
-                Skip
-              </Button>
-            )}
-          </View>
+        <View className='items-center justify-center p-4'>
+          <StepIndicator total={steps.length} current={currentStep} />
         </View>
-      </ScrollView>
+
+        <View className='gap-2 px-4 pb-4'>
+          <Button onPress={handleNext} isDisabled={isGetStartedDisabled}>
+            {isLastStep ? 'Get Started' : 'Next'}
+          </Button>
+
+          {!isLastStep && (
+            <Button
+              variant='outline'
+              onPress={() => router.push('/(auth)/sign-in')}
+            >
+              Skip
+            </Button>
+          )}
+        </View>
+      </View>
     </Screen>
   );
 }
