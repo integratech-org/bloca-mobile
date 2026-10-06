@@ -17,7 +17,7 @@ export function WelcomeStep() {
 
       <View className='mt-8 items-center justify-center'>
         <Image
-          source={require('@/assets/images/factory-worker-illustration.svg')}
+          source={require('@/features/onboarding/assets/factory-worker-illustration.svg')}
           style={{ width: 320, height: 320 }}
           contentFit='contain'
         />
