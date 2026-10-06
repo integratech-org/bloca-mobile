@@ -4,16 +4,24 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { ChecklistRow } from './checklist-row';
 
-export function ChecklistStep() {
+interface Props {
+  onAllChecked?: (allChecked: boolean) => void;
+}
+
+export function ChecklistStep({ onAllChecked }: Props) {
   const [doneIds, setDoneIds] = useState<string[]>([]);
 
   const toggle = (id: string) => {
     setDoneIds((prev) => {
-      if (prev.includes(id)) {
-        return prev.filter((i) => i !== id);
-      } else {
-        return [...prev, id];
-      }
+      const newDoneIds = prev.includes(id)
+        ? prev.filter((i) => i !== id)
+        : [...prev, id];
+
+      // Notify parent if all are checked
+      const allChecked = newDoneIds.length === checklistItems.length;
+      onAllChecked?.(allChecked);
+
+      return newDoneIds;
     });
   };
 

@@ -21,10 +21,13 @@ const steps = [
 
 export default function OnboardingScreen() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [checklistCompleted, setChecklistCompleted] = useState(false);
+
   // Reference to FlatList for programmatic scrolling
   const flatListRef = useRef<FlatList>(null);
 
   const isLastStep = currentStep === steps.length - 1;
+  const isGetStartedDisabled = isLastStep && !checklistCompleted;
 
   // Handle Next/Get Started button press
   const handleNext = () => {
@@ -53,16 +56,21 @@ export default function OnboardingScreen() {
   };
 
   // Render each step in full screen width
-  // Render each step in full screen width with internal scrolling
   const renderItem = ({ item }: any) => {
     const StepComponent = item.component;
+    const isChecklistStep = item.id === '4';
+
     return (
       <ScrollView
         style={{ width: SCREEN_WIDTH }}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}
       >
-        <StepComponent />
+        {isChecklistStep ? (
+          <StepComponent onAllChecked={setChecklistCompleted} />
+        ) : (
+          <StepComponent />
+        )}
       </ScrollView>
     );
   };
@@ -91,16 +99,18 @@ export default function OnboardingScreen() {
           </View>
 
           <View className='gap-2 px-4 pb-4'>
-            <Button onPress={handleNext}>
+            <Button onPress={handleNext} isDisabled={isGetStartedDisabled}>
               {isLastStep ? 'Get Started' : 'Next'}
             </Button>
 
-            <Button
-              variant='outline'
-              onPress={() => router.push('/(auth)/sign-in')}
-            >
-              Skip
-            </Button>
+            {!isLastStep && (
+              <Button
+                variant='outline'
+                onPress={() => router.push('/(auth)/sign-in')}
+              >
+                Skip
+              </Button>
+            )}
           </View>
         </View>
       </ScrollView>
