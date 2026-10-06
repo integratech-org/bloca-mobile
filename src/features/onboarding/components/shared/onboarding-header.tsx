@@ -6,7 +6,7 @@ export function OnboardingHeader() {
   return (
     <View className='mt-10 mb-4 flex-row items-center justify-center'>
       <Image
-        source={require('@/assets/splash/bloca-splash-icon.svg')}
+        source={require('@/assets/images/icon.svg')}
         style={{ width: 28, height: 28 }}
         contentFit='contain'
       />
