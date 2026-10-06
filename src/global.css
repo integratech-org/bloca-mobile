@@ -20,6 +20,12 @@
 @theme inline {
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 }
 
 @layer theme {
@@ -83,6 +89,12 @@
       --link: oklch(0.5675 0.1284 44.2905);
 
       /* place shadow here if needed */
+
+      --chart-1: var(--accent);
+      --chart-2: oklch(0.6072 0.1137 56.9032);
+      --chart-3: oklch(0.6721 0.0936 81.5257);
+      --chart-4: oklch(0.5943 0.055 64.4778);
+      --chart-5: oklch(0.4193 0.0364 46.7819);
     }
 
     @variant dark {
@@ -141,6 +153,12 @@
       --separator: oklch(0.2722 0.0222 51.733);
       --focus: var(--accent);
       --link: oklch(0.5675 0.1284 44.2905);
+
+      --chart-1: var(--accent);
+      --chart-2: oklch(0.5389 0.0294 63.3397);
+      --chart-3: oklch(0.8416 0.0245 73.5723);
+      --chart-4: oklch(0.3892 0.0197 82.7084);
+      --chart-5: oklch(0.8949 0.0251 49.7236);
     }
   }
 }
