@@ -6,9 +6,14 @@ import { ScrollView, View } from 'react-native';
 
 export default function SignInScreen() {
   return (
-    <Screen>
-      <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
-        <View className='px-6 pt-8'>
+    <Screen edges={['bottom']}>
+      <View className='bg-background flex-1'>
+        {/* Scrollable content area */}
+        <ScrollView
+          className='flex-1'
+          contentContainerClassName='px-6 pt-8'
+          showsVerticalScrollIndicator={false}
+        >
           {/* Logo Screen */}
           <View className='items-center'>
             <Image
@@ -29,23 +34,23 @@ export default function SignInScreen() {
           </View>
 
           <View>
-            {/* Sign in Form */}
+            {/* Sign in Form (without button) */}
             <SignInForm />
           </View>
+        </ScrollView>
 
-          {/* Information */}
-          <View>
-            <Alert status='warning' className='bg-[#FFBC9D]/50'>
-              <Alert.Indicator />
-              <Alert.Content>
-                <Typography.Paragraph type='body-xs' className='text-muted'>
-                  No self sign-up. Operator accounts are created by the Admins
-                </Typography.Paragraph>
-              </Alert.Content>
-            </Alert>
-          </View>
+        {/* Fixed button section at bottom */}
+        <View className='gap-4 px-6 pb-4'>
+          <Alert status='warning' className='bg-[#FFBC9D]/50'>
+            <Alert.Indicator />
+            <Alert.Content>
+              <Typography.Paragraph type='body-xs' className='text-muted'>
+                No self sign-up. Operator accounts are created by the Admins
+              </Typography.Paragraph>
+            </Alert.Content>
+          </Alert>
         </View>
-      </ScrollView>
+      </View>
     </Screen>
   );
 }

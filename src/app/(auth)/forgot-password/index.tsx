@@ -9,10 +9,16 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ForgotPasswordScreen() {
   return (
-    <Screen>
-      <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
-        <AuthHeader />
-        <View className='flex-1 p-4'>
+    <Screen edges={['bottom']}>
+      <View className='bg-background flex-1'>
+        {/* Scrollable content area */}
+        <ScrollView
+          className='flex-1'
+          contentContainerClassName='p-4'
+          showsVerticalScrollIndicator={false}
+        >
+          <AuthHeader />
+
           {/* Title and Subheading*/}
           <View className='mb-6'>
             <Typography.Heading>Forgot Password</Typography.Heading>
@@ -27,22 +33,22 @@ export default function ForgotPasswordScreen() {
           <ForgotPasswordForm />
 
           {/* Illustration Placehoder  */}
-          <View className='items-center justify-center'>
+          <View className='mt-8 items-center justify-center'>
             <Image
               source={require('@/features/auth/assets/holding-phone-illustration.svg')}
               style={{ width: 220, height: 220 }}
               contentFit='contain'
             />
           </View>
+        </ScrollView>
 
-          {/* Send Code Button */}
-          <View>
-            <Button onPress={() => router.push('/forgot-password/verify')}>
-              Send Code
-            </Button>
-          </View>
+        {/* Fixed button section at bottom */}
+        <View className='px-4 pb-4'>
+          <Button onPress={() => router.push('/forgot-password/verify')}>
+            Send Code
+          </Button>
         </View>
-      </ScrollView>
+      </View>
     </Screen>
   );
 }
