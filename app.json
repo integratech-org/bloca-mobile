@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "BLOCA",
+    "name": "bloca-mobile",
     "slug": "bloca-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -32,9 +32,9 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "#208AEF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 300
+          "imageWidth": 76
         }
       ],
       "@react-native-vector-icons/material-design-icons",
