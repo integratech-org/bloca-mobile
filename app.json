@@ -9,7 +9,7 @@
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#f9f6f3",
     "ios": {
-      "icon": "./assets/bloca.ico",
+      "icon": "./assets/bloca.icon",
       "bundleIdentifier": "com.integratech.bloca"
     },
     "android": {
