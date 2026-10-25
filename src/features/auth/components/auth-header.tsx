@@ -3,16 +3,17 @@ import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { Button, Typography } from 'heroui-native';
 import { View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export function AuthHeader() {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View className='relative mt-10 mb-2 flex-row items-center justify-center'>
-      <Button
-        isIconOnly
-        variant='ghost'
-        onPress={() => router.back()}
-        className='absolute left-0 ml-4 flex-row items-center justify-center text-center'
-      >
+    <View
+      className='flex-row items-center justify-between px-4'
+      style={{ paddingTop: insets.top }}
+    >
+      <Button isIconOnly variant='ghost' onPress={() => router.back()}>
         <StyledMaterialDesignIcons name='chevron-left' size={42} />
       </Button>
 
@@ -24,6 +25,9 @@ export function AuthHeader() {
         />
         <Typography.Heading className='text-accent'> BLOCA </Typography.Heading>
       </View>
+
+      {/* Spacer to keep logo centered */}
+      <View style={{ width: 42 }} />
     </View>
   );
 }

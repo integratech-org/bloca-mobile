@@ -4,20 +4,14 @@ import { VerifyForm } from '@/features/auth/components/forms/verify-form';
 import { router } from 'expo-router';
 import { Button, Typography } from 'heroui-native';
 import { View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ForgotPasswordVerifyScreen() {
   return (
     <Screen edges={['bottom']}>
-      <View className='bg-background flex-1'>
-        {/* Scrollable content area */}
-        <ScrollView
-          className='flex-1'
-          contentContainerClassName='p-4'
-          showsVerticalScrollIndicator={false}
-        >
-          <AuthHeader />
+      <View className='flex-1 p-4'>
+        <AuthHeader />
 
+        <View className='flex-1'>
           {/* Title and Subtitle */}
           <View className='mb-6'>
             <Typography.Heading>Enter the Code</Typography.Heading>
@@ -30,7 +24,7 @@ export default function ForgotPasswordVerifyScreen() {
           </View>
 
           {/* Input OTP */}
-          <View className='mt-10'>
+          <View className='mt-8'>
             <VerifyForm />
           </View>
 
@@ -41,10 +35,10 @@ export default function ForgotPasswordVerifyScreen() {
               Resend Code in --:--
             </Typography.Paragraph>
           </View>
-        </ScrollView>
+        </View>
 
         {/* Fixed button section at bottom */}
-        <View className='px-4 pb-4'>
+        <View>
           <Button onPress={() => router.push('/forgot-password/reset')}>
             Verify
           </Button>
