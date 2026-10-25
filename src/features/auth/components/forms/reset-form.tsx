@@ -1,11 +1,5 @@
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
-import {
-  Button,
-  InputGroup,
-  Label,
-  TextField,
-  Typography,
-} from 'heroui-native';
+import { InputGroup, Label, TextField, Typography } from 'heroui-native';
 import { View } from 'react-native';
 
 export function ResetForm() {
@@ -47,11 +41,6 @@ export function ResetForm() {
           />
         </InputGroup>
       </TextField>
-
-      {/* Reset Button */}
-      <View className='mt-20'>
-        <Button>Reset Password</Button>
-      </View>
     </View>
   );
 }

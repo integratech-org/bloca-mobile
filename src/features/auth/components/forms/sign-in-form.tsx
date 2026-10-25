@@ -52,8 +52,8 @@ export function SignInForm() {
         </LinkButton>
       </View>
 
-      {/* Login Button */}
-      <View className='mt-4 mb-4 gap-4'>
+      {/* Login Button - moved to parent screen */}
+      <View className='mt-4'>
         <Button
           onPress={() => {
             router.push('/(app)/(tabs)/(dashboard)');
