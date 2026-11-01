@@ -1,5 +1,7 @@
-import { NativeStackNavigationOptions } from 'expo-router';
+import { NativeStackNavigationOptions, router } from 'expo-router';
 import { useCSSVariable } from 'uniwind';
+import { Pressable } from 'react-native';
+import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 
 export function useStackScreenOptions(
   overrides?: NativeStackNavigationOptions,
@@ -19,6 +21,21 @@ export function useStackScreenOptions(
     },
     headerShadowVisible: true,
     headerTitleAlign: 'left',
+    headerBackVisible: false,
+    headerLeft: ({ canGoBack, tintColor }) =>
+      canGoBack ? (
+        <Pressable
+          onPress={() => router.back()}
+          hitSlop={12}
+          style={{ marginRight: 8 }}
+        >
+          <StyledMaterialDesignIcons
+            name='chevron-left'
+            size={28}
+            color={tintColor}
+          />
+        </Pressable>
+      ) : null,
     ...overrides,
   };
 }
