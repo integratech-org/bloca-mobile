@@ -1,8 +1,8 @@
 import { FlatList, View } from 'react-native';
 import { materials } from '../constants/materials';
-import MaterialExampleCard from './material-example-card';
+import { MaterialExampleCard } from './material-example-card';
 
-export default function MaterialExampleList() {
+export function MaterialExampleList() {
   return (
     <FlatList
       data={materials}

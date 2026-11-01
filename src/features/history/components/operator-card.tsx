@@ -6,7 +6,7 @@ interface Props {
   operator: string;
 }
 
-export default function OperatorCard({ operator }: Props) {
+export function OperatorCard({ operator }: Props) {
   return (
     <Card className='gap-2 rounded-2xl'>
       <Card.Body>

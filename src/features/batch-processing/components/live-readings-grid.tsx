@@ -10,7 +10,7 @@ interface Props {
   powerDraw: number;
 }
 
-export default function LiveReadingsGrid({
+export function LiveReadingsGrid({
   maxTemp,
   peakPressure,
   heatingDuration,

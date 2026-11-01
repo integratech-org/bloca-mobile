@@ -1,8 +1,8 @@
 import { Screen } from '@/components/screen';
 import { EmergencyStopButton } from '@/features/batch-processing/components/emergency-stop-button';
-import KillPowerDialog from '@/features/batch-processing/components/kill-power-dialog';
-import LiveReadingsGrid from '@/features/batch-processing/components/live-readings-grid';
-import PhaseCard from '@/features/batch-processing/components/phase-card';
+import { KillPowerDialog } from '@/features/batch-processing/components/kill-power-dialog';
+import { LiveReadingsGrid } from '@/features/batch-processing/components/live-readings-grid';
+import { PhaseCard } from '@/features/batch-processing/components/phase-card';
 import { useState } from 'react';
 import { ScrollView } from 'react-native';
 

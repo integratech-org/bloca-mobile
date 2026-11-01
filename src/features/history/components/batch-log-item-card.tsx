@@ -2,15 +2,15 @@ import { PressableFeedback, Surface, Typography } from 'heroui-native';
 import { BatchLog } from '../types';
 import { Link } from 'expo-router';
 import { View } from 'react-native';
-import StatusBadge from './status-badge';
-import StatusIcon from './status-icon';
+import { StatusBadge } from './status-badge';
+import { StatusIcon } from './status-icon';
 import { format, parseISO } from 'date-fns';
 
 interface Props {
   batch: BatchLog;
 }
 
-export default function BatchLogItemCard({ batch }: Props) {
+export function BatchLogItemCard({ batch }: Props) {
   const time = format(parseISO(batch.timestamp), 'HH:mm');
 
   return (

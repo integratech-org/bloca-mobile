@@ -1,9 +1,9 @@
 import { Section } from '@/components/section';
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
-import MaterialExampleList from './material-example-list';
+import { MaterialExampleList } from './material-example-list';
 
-export default function AcceptedMaterialsCard() {
+export function AcceptedMaterialsCard() {
   return (
     <Section
       variant='success'

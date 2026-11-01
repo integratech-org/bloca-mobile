@@ -1,9 +1,9 @@
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { RadialGauge } from './radial-gauge';
-import StatusPill from './status-pill';
+import { StatusPill } from './status-pill';
 
-export default function PhaseCard() {
+export function PhaseCard() {
   return (
     <Surface className='rounded-2xl'>
       <View className='items-center justify-center gap-3'>

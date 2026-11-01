@@ -8,7 +8,7 @@ interface Props {
   avatarUrl: string;
 }
 
-export default function ProfileHeader({ name, role, avatarUrl }: Props) {
+export function ProfileHeader({ name, role, avatarUrl }: Props) {
   return (
     <View className='items-center gap-2'>
       <ProfileAvatar source={avatarUrl} />

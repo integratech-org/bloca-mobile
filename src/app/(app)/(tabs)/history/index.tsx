@@ -1,5 +1,5 @@
 import { Screen } from '@/components/screen';
-import BatchLogItemCard from '@/features/history/components/batch-log-item-card';
+import { BatchLogItemCard } from '@/features/history/components/batch-log-item-card';
 import { mockBatchLogs } from '@/features/history/data/mock-batch-logs';
 import { FlatList, View } from 'react-native';
 

@@ -14,7 +14,7 @@ const badge = tv({
   },
 });
 
-export default function StatusBadge({ status }: { status: BatchStatus }) {
+export function StatusBadge({ status }: { status: BatchStatus }) {
   const { listLabel: label } = STATUS_CONFIG[status];
   const { root, text } = badge({ status });
 

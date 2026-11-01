@@ -1,9 +1,9 @@
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
-import ProgressBar from './progress-bar';
+import { ProgressBar } from './progress-bar';
 
-export default function SensorStatusCard() {
+export function SensorStatusCard() {
   return (
     <Surface className='flex-1 rounded-2xl'>
       <View className='gap-2'>

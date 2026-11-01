@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import SettingsRow, { SettingsRowProps } from './settings-row';
-import { Card, Separator, Surface, Typography } from 'heroui-native';
+import { Separator, Surface, Typography } from 'heroui-native';
 import { Fragment } from 'react';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   items: SettingsRowProps[];
 }
 
-export default function SettingsSection({ title, items }: Props) {
+export function SettingsSection({ title, items }: Props) {
   return (
     <View className='gap-2'>
       <Typography.Paragraph

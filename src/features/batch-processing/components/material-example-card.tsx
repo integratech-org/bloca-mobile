@@ -9,7 +9,7 @@ interface Props {
   image: ImageSource;
 }
 
-export default function MaterialExampleCard({ label, image }: Props) {
+export function MaterialExampleCard({ label, image }: Props) {
   return (
     <View className='size-32 overflow-hidden rounded-lg'>
       <StyledImage

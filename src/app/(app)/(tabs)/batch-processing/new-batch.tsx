@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import EquipmentChecklistCard from '@/features/batch-processing/components/equipment-checklist-card';
-import FeedstockValidationCard from '@/features/batch-processing/components/feedstock-validation-card';
+import { EquipmentChecklistCard } from '@/features/batch-processing/components/equipment-checklist-card';
+import { FeedstockValidationCard } from '@/features/batch-processing/components/feedstock-validation-card';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
 import { ScrollView } from 'react-native';

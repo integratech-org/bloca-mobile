@@ -18,7 +18,7 @@ const statusIcon = tv({
   },
 });
 
-export default function StatusIcon({ status }: { status: BatchStatus }) {
+export function StatusIcon({ status }: { status: BatchStatus }) {
   const { icon: name } = STATUS_CONFIG[status];
   const { tile, icon } = statusIcon({ status });
   return (

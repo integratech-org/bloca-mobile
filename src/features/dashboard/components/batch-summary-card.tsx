@@ -4,7 +4,7 @@ import { Surface } from 'heroui-native';
 import { View } from 'react-native';
 import { LegendItem } from '@/features/history/components/legend-item';
 
-export default function BatchSummaryCard() {
+export function BatchSummaryCard() {
   return (
     <Section title='Previous Batch Summary'>
       <Surface className='rounded-2xl'>

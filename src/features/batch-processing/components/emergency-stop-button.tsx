@@ -1,17 +1,13 @@
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Button, cn } from 'heroui-native';
 
-type EmergencyStopButtonProps = {
+interface Props {
   onPress: () => void;
   isDisabled?: boolean;
   className?: string;
-};
+}
 
-export function EmergencyStopButton({
-  onPress,
-  isDisabled,
-  className,
-}: EmergencyStopButtonProps) {
+export function EmergencyStopButton({ onPress, isDisabled, className }: Props) {
   return (
     <Button
       variant='outline'

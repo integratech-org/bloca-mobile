@@ -11,7 +11,7 @@ interface Props {
   powerDraw: number;
 }
 
-export default function BatchDetailsSection({
+export function BatchDetailsSection({
   maxTemp,
   peakPressure,
   heatingDuration,

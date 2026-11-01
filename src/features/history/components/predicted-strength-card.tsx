@@ -6,7 +6,7 @@ interface Props {
   value: number;
 }
 
-export default function PredictedStrengthCard({ value }: Props) {
+export function PredictedStrengthCard({ value }: Props) {
   return (
     <Section title='Predicted strength'>
       <Surface className='rounded-2xl'>
