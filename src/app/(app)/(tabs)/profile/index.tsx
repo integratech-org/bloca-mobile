@@ -1,17 +1,39 @@
 import { Screen } from '@/components/screen';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
+import { StyledRefreshControl } from '@/components/styled-refresh-control';
 import { ProfileHeader } from '@/features/profile/components/profile-header';
 import { SettingsSection } from '@/features/profile/components/settings-section';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
+import { useCallback, useState } from 'react';
 import { ScrollView } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 export default function ProfileScreen() {
+  const accent = useCSSVariable('--color-accent') as string;
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
+
   return (
     <Screen>
       <ScrollView
         contentContainerClassName='p-4 gap-6'
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <StyledRefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={[accent]}
+            tintColorClassName='accent-accent'
+            progressBackgroundColorClassName='accent-surface'
+          />
+        }
       >
         <ProfileHeader name='John Doe' role='Operator' avatarUrl='' />
 
