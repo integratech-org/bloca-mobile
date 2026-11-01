@@ -1,20 +1,18 @@
 {
   "expo": {
-    "name": "bloca-mobile",
+    "name": "BLOCA",
     "slug": "bloca-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "blocamobile",
     "userInterfaceStyle": "automatic",
-    "backgroundColor": "#f9f6f3",
     "ios": {
-      "icon": "./assets/bloca.icon",
+      "icon": "./assets/AppIcon.icon",
       "bundleIdentifier": "com.integratech.bloca"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -32,9 +30,12 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#f9f6f3",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#1A110C"
+          }
         }
       ],
       "@react-native-vector-icons/material-design-icons",
