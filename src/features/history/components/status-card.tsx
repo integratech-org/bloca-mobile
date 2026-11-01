@@ -3,7 +3,7 @@ import { BatchStatus } from '../types';
 import { View } from 'react-native';
 import { format, parseISO } from 'date-fns';
 import { STATUS_CONFIG } from '../constants/status-config';
-import StatusIcon from './status-icon';
+import { StatusIcon } from './status-icon';
 
 const header = tv({
   slots: {
@@ -34,7 +34,7 @@ interface Props {
   timestamp: string;
 }
 
-export default function StatusCard({ id, status, timestamp }: Props) {
+export function StatusCard({ id, status, timestamp }: Props) {
   const { root, text } = header({ status });
   const { reportLabel: label } = STATUS_CONFIG[status];
 

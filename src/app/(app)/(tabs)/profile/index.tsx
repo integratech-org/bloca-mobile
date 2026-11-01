@@ -1,9 +1,9 @@
 import { Screen } from '@/components/screen';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import ProfileHeader from '@/features/profile/components/profile-header';
-import SettingsSection from '@/features/profile/components/settings-section';
+import { ProfileHeader } from '@/features/profile/components/profile-header';
+import { SettingsSection } from '@/features/profile/components/settings-section';
 import { router } from 'expo-router';
-import { Button, Typography } from 'heroui-native';
+import { Button } from 'heroui-native';
 import { ScrollView } from 'react-native';
 
 export default function ProfileScreen() {

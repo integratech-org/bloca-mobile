@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export default function ProgressBar({
+export function ProgressBar({
   value,
   fillClassName = 'bg-accent',
   trackClassName = 'bg-default',

@@ -1,9 +1,9 @@
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { PressableFeedback, Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
-import ProgressBar from './progress-bar';
+import { ProgressBar } from './progress-bar';
 
-export default function MachineStatusCard() {
+export function MachineStatusCard() {
   return (
     <PressableFeedback className='overflow-hidden rounded-2xl'>
       <Surface className='border-accent rounded-2xl border-2'>

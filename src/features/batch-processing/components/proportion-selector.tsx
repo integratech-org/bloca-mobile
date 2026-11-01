@@ -8,11 +8,7 @@ interface Props {
   isDisabled?: boolean;
 }
 
-export default function ProportionSelector({
-  value,
-  onChange,
-  isDisabled,
-}: Props) {
+export function ProportionSelector({ value, onChange, isDisabled }: Props) {
   return (
     <View className='flex-row items-center gap-3'>
       {PROPORTIONS.map((option) => {

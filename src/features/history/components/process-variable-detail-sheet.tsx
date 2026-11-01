@@ -4,7 +4,7 @@ import { useProcessVariableSheetStore } from '../stores/process-variable-sheet-s
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { PROCESS_VARIABLE_INFO } from '@/constants/process-variable-info';
 
-export default function ProcessVariableDetailSheet() {
+export function ProcessVariableDetailSheet() {
   const selected = useProcessVariableSheetStore((s) => s.selected);
   const isOpen = useProcessVariableSheetStore((s) => s.isOpen);
   const close = useProcessVariableSheetStore((s) => s.close);

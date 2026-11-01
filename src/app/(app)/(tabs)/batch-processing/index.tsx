@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import AcceptedMaterialsCard from '@/features/batch-processing/components/accepted-materials-card';
-import OperatingInstructionsCard from '@/features/batch-processing/components/operating-instructions-card';
+import { AcceptedMaterialsCard } from '@/features/batch-processing/components/accepted-materials-card';
+import { OperatingInstructionsCard } from '@/features/batch-processing/components/operating-instructions-card';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
 import { ScrollView } from 'react-native';

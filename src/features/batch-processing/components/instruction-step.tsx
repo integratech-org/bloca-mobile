@@ -7,7 +7,7 @@ interface Props {
   description: string;
 }
 
-export default function InstructionStep({ step, title, description }: Props) {
+export function InstructionStep({ step, title, description }: Props) {
   return (
     <View className='flex-row gap-3'>
       <View className='bg-default size-6 items-center justify-center rounded-full'>

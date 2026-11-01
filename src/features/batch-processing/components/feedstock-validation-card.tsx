@@ -2,11 +2,11 @@ import NumberStepper from '@/components/number-stepper';
 import { Section } from '@/components/section';
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
-import ProportionSelector from './proportion-selector';
+import { ProportionSelector } from './proportion-selector';
 import { Proportion } from '../api/feedstock-schema';
 import { useState } from 'react';
 
-export default function FeedstockValidationCard() {
+export function FeedstockValidationCard() {
   const [proportion, setProportion] = useState<Proportion | null>(null);
 
   return (

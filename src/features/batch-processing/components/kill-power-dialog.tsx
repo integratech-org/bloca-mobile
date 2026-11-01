@@ -7,7 +7,7 @@ interface Props {
   onOpenChange: (open: boolean) => void;
 }
 
-export default function KillPowerDialog({ isOpen, onOpenChange }: Props) {
+export function KillPowerDialog({ isOpen, onOpenChange }: Props) {
   return (
     <Dialog isOpen={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Portal>

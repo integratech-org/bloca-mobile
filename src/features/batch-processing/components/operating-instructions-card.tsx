@@ -1,9 +1,9 @@
 import { Section } from '@/components/section';
 import { Surface } from 'heroui-native';
 import { steps } from '../constants/steps';
-import InstructionStep from './instruction-step';
+import { InstructionStep } from './instruction-step';
 
-export default function OperatingInstructionsCard() {
+export function OperatingInstructionsCard() {
   return (
     <Section
       title='Feedstock & Operating Instructions'

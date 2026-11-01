@@ -8,7 +8,7 @@ interface Props {
   plasticPct: number;
 }
 
-export default function MaterialCompositionCard({ plasticPct }: Props) {
+export function MaterialCompositionCard({ plasticPct }: Props) {
   const sandPct = 100 - plasticPct;
   const [chart1, chart2] = useCSSVariable([
     '--chart-1',

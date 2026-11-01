@@ -5,7 +5,7 @@ interface Props {
   label: string;
 }
 
-export default function EquipmentChecklistItem({ label }: Props) {
+export function EquipmentChecklistItem({ label }: Props) {
   const [checked, setChecked] = useState(false);
 
   return (
