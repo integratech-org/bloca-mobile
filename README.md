@@ -23,9 +23,9 @@
     <a href="https://github.com/integratech-org/bloca-mobile"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/integratech-org/bloca-mobile/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/integratech-org/bloca-mobile/issues/new?template=bug_report.yml">Report Bug</a>
     &middot;
-    <a href="https://github.com/integratech-org/bloca-mobile/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/integratech-org/bloca-mobile/issues/new?template=feature_request.yml">Request Feature</a>
   </p>
 </div>
 
