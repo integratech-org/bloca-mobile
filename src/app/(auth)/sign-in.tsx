@@ -16,11 +16,11 @@ export default function SignInScreen() {
         >
           {/* Logo Screen */}
           <View className='items-center'>
-            <Image
-              source={require('@/assets/images/bloca-icon.svg')}
-              style={{ width: 80, height: 80, marginBottom: 16, marginTop: 16 }}
-              contentFit='contain'
-            />
+            {/* <Image */}
+            {/*   source={require('@/assets/images/bloca-icon.svg')} */}
+            {/*   style={{ width: 80, height: 80, marginBottom: 16, marginTop: 16 }} */}
+            {/*   contentFit='contain' */}
+            {/* /> */}
             <Typography.Heading className='text-accent'>
               BLOCA
             </Typography.Heading>
