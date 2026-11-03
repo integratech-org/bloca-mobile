@@ -1,45 +1,37 @@
 import { Screen } from '@/components/screen';
+import { ScreenHeading } from '@/components/screen-heading';
+import { StyledImage } from '@/components/styled-image';
 import { AuthHeader } from '@/features/auth/components/auth-header';
 import { ForgotPasswordForm } from '@/features/auth/components/forms/forgot-password-form';
-import { Image } from 'expo-image';
 import { router } from 'expo-router';
-import { Button, Typography } from 'heroui-native';
+import { Button } from 'heroui-native';
 import { View } from 'react-native';
 
 export default function ForgotPasswordScreen() {
   return (
-    <Screen edges={['bottom']}>
-      <View className='flex-1 p-4'>
+    <Screen edges={['top', 'bottom']}>
+      <View className='flex-1 gap-6 p-4'>
         <AuthHeader />
 
-        {/* Title and Subheading*/}
-        <View className='mb-6 flex-1'>
-          <Typography.Heading>Forgot Password</Typography.Heading>
+        <ScreenHeading
+          title='Forgot password'
+          description="Enter the email your admin registered. We'll send a code to verify it's you."
+        />
 
-          <Typography.Paragraph>
-            Enter the email your admin registered. We&apos;ll send a code to
-            verify verify it&apos;s you.
-          </Typography.Paragraph>
-        </View>
-
-        {/* Forgot Password Form */}
         <ForgotPasswordForm />
 
-        {/* Illustration Placehoder  */}
-        <View className='mt-8 items-center justify-center'>
-          <Image
-            source={require('@/features/auth/assets/holding-phone-illustration.svg')}
-            style={{ width: 220, height: 220 }}
-            contentFit='contain'
-          />
-        </View>
+        <StyledImage
+          source={require('@/features/auth/assets/holding-phone-illustration.svg')}
+          contentFit='contain'
+          className='flex-1'
+        />
 
-        {/* Fixed button section at bottom */}
-        <View>
-          <Button onPress={() => router.push('/forgot-password/verify')}>
-            Send Code
-          </Button>
-        </View>
+        <Button
+          onPress={() => router.push('/(auth)/forgot-password/verify-otp')}
+          className='mt-auto rounded-2xl'
+        >
+          Send code
+        </Button>
       </View>
     </Screen>
   );
