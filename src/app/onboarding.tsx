@@ -1,109 +1,97 @@
+import ExpandingDot from '@/components/expanding-dot';
 import { Screen } from '@/components/screen';
-import StepIndicator from '@/components/step-indicator';
-import { BatchWorkflowStep } from '@/features/onboarding/components/batch/batch-workflow-step';
-import { ChecklistStep } from '@/features/onboarding/components/checklist/checklist-step';
-import { SafetyStep } from '@/features/onboarding/components/safety/safety-step';
-import { OnboardingHeader } from '@/features/onboarding/components/shared/onboarding-header';
-import { WelcomeStep } from '@/features/onboarding/components/welcome/welcome-step';
+import { BatchSlide } from '@/features/onboarding/components/batch-slide';
+import { ChecklistSlide } from '@/features/onboarding/components/checklist-slide';
+import { OnboardingHeader } from '@/features/onboarding/components/onboarding-header';
+import { SafetySlide } from '@/features/onboarding/components/safety-slide';
+import { WelcomeSlide } from '@/features/onboarding/components/welcome-slide';
+import { useOnboardingStore } from '@/features/onboarding/stores/onboarding-store';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
-import { useCallback, useRef, useState } from 'react';
-import { Dimensions, FlatList, View } from 'react-native';
+import { useRef, useState } from 'react';
+import { View, Animated, FlatList, useWindowDimensions } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
-
-const steps = [
-  { id: '1', component: WelcomeStep },
-  { id: '2', component: SafetyStep },
-  { id: '3', component: BatchWorkflowStep },
-  { id: '4', component: ChecklistStep },
-];
+const SLIDES = [WelcomeSlide, SafetySlide, BatchSlide, ChecklistSlide];
 
 export default function OnboardingScreen() {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [checklistCompleted, setChecklistCompleted] = useState(false);
-
-  // Reference to FlatList for programmatic scrolling
+  const { width } = useWindowDimensions();
   const flatListRef = useRef<FlatList>(null);
+  const [scrollX] = useState(() => new Animated.Value(0));
+  const [accent, muted] = useCSSVariable([
+    '--color-accent',
+    '--color-muted',
+  ]) as string[];
+  const completeOnboarding = useOnboardingStore((s) => s.completeOnboarding);
 
-  const isLastStep = currentStep === steps.length - 1;
-  const isGetStartedDisabled = isLastStep && !checklistCompleted;
+  const [index, setIndex] = useState(0);
+  const [checklistDone, setChecklistDone] = useState(false);
 
-  // Handle Next/Get Started button press
-  const handleNext = () => {
-    if (currentStep < steps.length - 1) {
-      // Scroll to next step
-      flatListRef.current?.scrollToIndex({
-        index: currentStep + 1,
-        animated: true,
-      });
-    } else {
-      // Last step - navigate to sign-in
-      router.push('/(auth)/sign-in');
-    }
-  };
-
-  // Track which step is currently visible when user swipes
-  const onViewableItemsChanged = useCallback(({ viewableItems }: any) => {
-    if (viewableItems.length > 0) {
-      setCurrentStep(viewableItems[0].index ?? 0);
-    }
-  }, []);
-
-  // Define when a step is considered "visible" (50% threshold)
-  const viewabilityConfig = {
-    itemVisiblePercentThreshold: 50,
-  };
-
-  // Render each step in full screen width
-  const renderItem = ({ item }: any) => {
-    const StepComponent = item.component;
-    const isChecklistStep = item.id === '4';
-
-    return (
-      <View style={{ width: SCREEN_WIDTH }}>
-        {isChecklistStep ? (
-          <StepComponent onAllChecked={setChecklistCompleted} />
-        ) : (
-          <StepComponent />
-        )}
-      </View>
-    );
+  const isLast = index === SLIDES.length - 1;
+  const goTo = (i: number) => flatListRef.current?.scrollToIndex({ index: i });
+  const finish = () => {
+    completeOnboarding();
+    router.push('/(auth)/sign-in');
   };
 
   return (
-    <Screen>
-      <View className='flex-1 bg-white'>
+    <Screen edges={['top', 'bottom']}>
+      <View className='flex-1 gap-6 p-4'>
         <OnboardingHeader />
 
         <FlatList
           ref={flatListRef}
-          data={steps}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          className='-mx-4'
+          data={SLIDES}
+          keyExtractor={(_, i) => String(i)}
+          renderItem={({ item: Slide }) => (
+            <View style={{ width }} className='px-4'>
+              <Slide onChecklistChange={setChecklistDone} />
+            </View>
+          )}
           horizontal
           pagingEnabled
           showsHorizontalScrollIndicator={false}
-          onViewableItemsChanged={onViewableItemsChanged}
-          viewabilityConfig={viewabilityConfig}
           scrollEventThrottle={16}
+          getItemLayout={(_, i) => ({
+            length: width,
+            offset: width * i,
+            index: i,
+          })}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            {
+              useNativeDriver: false,
+            },
+          )}
+          onMomentumScrollEnd={(e) =>
+            setIndex(Math.round(e.nativeEvent.contentOffset.x / width))
+          }
         />
 
-        <View className='items-center justify-center p-4'>
-          <StepIndicator total={steps.length} current={currentStep} />
-        </View>
+        <ExpandingDot
+          data={SLIDES}
+          expandingDotWidth={30}
+          scrollX={scrollX}
+          activeDotColor={accent}
+          inActiveDotColor={muted}
+          inActiveDotOpacity={0.5}
+          dotStyle={{ width: 8, height: 8, borderRadius: 4 }}
+          containerStyle={{ position: 'relative', bottom: 0 }}
+        />
 
-        <View className='gap-2 px-4 pb-4'>
-          <Button onPress={handleNext} isDisabled={isGetStartedDisabled}>
-            {isLastStep ? 'Get Started' : 'Next'}
+        <View className='gap-2'>
+          <Button
+            isDisabled={isLast && !checklistDone}
+            onPress={isLast ? finish : () => goTo(index + 1)}
+            className='rounded-2xl'
+          >
+            <Button.Label>{isLast ? 'Get started' : 'Next'}</Button.Label>
           </Button>
 
-          {!isLastStep && (
-            <Button
-              variant='outline'
-              onPress={() => router.push('/(auth)/sign-in')}
-            >
-              Skip
+          {!isLast && (
+            <Button onPress={finish} variant='outline' className='rounded-2xl'>
+              <Button.Label>Skip</Button.Label>
             </Button>
           )}
         </View>
