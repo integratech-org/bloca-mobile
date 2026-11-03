@@ -80,7 +80,11 @@ export default function ProfileScreen() {
           ]}
         />
 
-        <Button variant='danger-soft' className='rounded-2xl'>
+        <Button
+          variant='danger-soft'
+          className='rounded-2xl'
+          onPress={() => router.push('/(auth)/sign-in')}
+        >
           <StyledMaterialDesignIcons
             name='logout'
             size={20}

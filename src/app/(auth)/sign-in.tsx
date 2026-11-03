@@ -1,52 +1,45 @@
 import { Screen } from '@/components/screen';
+import { StyledImage } from '@/components/styled-image';
 import { SignInForm } from '@/features/auth/components/forms/sign-in-form';
-import { Image } from 'expo-image';
 import { Alert, Typography } from 'heroui-native';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 
 export default function SignInScreen() {
   return (
-    <Screen edges={['bottom']}>
-      <View className='bg-background flex-1'>
-        {/* Scrollable content area */}
-        <ScrollView
-          className='flex-1'
-          contentContainerClassName='px-6 pt-8'
-          showsVerticalScrollIndicator={false}
-        >
-          {/* Logo Screen */}
-          <View className='items-center'>
-            {/* <Image */}
-            {/*   source={require('@/assets/images/bloca-icon.svg')} */}
-            {/*   style={{ width: 80, height: 80, marginBottom: 16, marginTop: 16 }} */}
-            {/*   contentFit='contain' */}
-            {/* /> */}
-            <Typography.Heading className='text-accent'>
+    <Screen edges={['top', 'bottom']}>
+      <View className='flex-1 gap-6 p-4'>
+        <View className='items-center gap-8'>
+          <View className='items-center gap-2'>
+            <StyledImage
+              source={require('@/assets/images/logo.svg')}
+              contentFit='contain'
+              className='size-20'
+            />
+            <Typography.Heading
+              type='h1'
+              className='text-accent text-4xl font-bold tracking-wide uppercase'
+            >
               BLOCA
             </Typography.Heading>
           </View>
+          <Typography.Paragraph
+            type='body'
+            className='text-center text-xl font-medium'
+          >
+            Sign in with the account your admin set up for you.
+          </Typography.Paragraph>
+        </View>
 
-          {/* Description */}
-          <View>
-            <Typography.Paragraph className='text-center'>
-              Sign in with the account your admin set up for you.
-            </Typography.Paragraph>
-          </View>
+        <View className='flex-1 gap-2'>
+          <SignInForm />
 
-          <View>
-            {/* Sign in Form (without button) */}
-            <SignInForm />
-          </View>
-        </ScrollView>
-
-        {/* Fixed button section at bottom */}
-        <View className='gap-4 px-6 pb-4'>
-          <Alert status='warning' className='bg-[#FFBC9D]/50'>
+          <Alert status='danger' className='mt-auto rounded-2xl'>
             <Alert.Indicator />
             <Alert.Content>
-              <Typography.Paragraph type='body-xs' className='text-muted'>
-                No self sign-up. Operator accounts are created by the Admins
-              </Typography.Paragraph>
+              <Alert.Description className='text-xs'>
+                No self sign-up. New operator accounts are created by an Admin
+                or System Admin.
+              </Alert.Description>
             </Alert.Content>
           </Alert>
         </View>
