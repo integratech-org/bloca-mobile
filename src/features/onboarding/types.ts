@@ -1,17 +1,16 @@
-import type { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
+import { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
 
-export interface SafetyFeature {
+export interface SafetyItem {
   icon: MaterialDesignIconsIconName;
   text: string;
 }
 
-export interface BatchFeature {
+export interface BatchItem {
   icon: MaterialDesignIconsIconName;
   text: string;
 }
 
 export interface ChecklistItem {
-  id: string;
   icon: MaterialDesignIconsIconName;
   title: string;
   description: string;

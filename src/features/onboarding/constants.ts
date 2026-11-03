@@ -1,6 +1,6 @@
-import type { BatchFeature, ChecklistItem, SafetyFeature } from './types';
+import type { BatchItem, ChecklistItem, SafetyItem } from './types';
 
-export const safetyFeatures: SafetyFeature[] = [
+export const safetyItems: SafetyItem[] = [
   {
     icon: 'hand-back-right-outline',
     text: 'Emergency Stop is in app and the machine',
@@ -15,7 +15,7 @@ export const safetyFeatures: SafetyFeature[] = [
   },
 ];
 
-export const batchFeatures: BatchFeature[] = [
+export const batchItems: BatchItem[] = [
   {
     icon: 'clipboard-text-outline',
     text: 'Check Feedstock and Equipment',
@@ -40,19 +40,16 @@ export const batchFeatures: BatchFeature[] = [
 
 export const checklistItems: ChecklistItem[] = [
   {
-    id: 'guidance',
     icon: 'file-document-outline',
     title: 'Guidance',
     description: 'Read manual instructions',
   },
   {
-    id: 'discover',
     icon: 'plus-box-outline',
     title: 'Discover',
     description: 'Located the emergency buttons',
   },
   {
-    id: 'info',
     icon: 'thermometer',
     title: 'Information',
     description: 'Know the temperature cutoff',

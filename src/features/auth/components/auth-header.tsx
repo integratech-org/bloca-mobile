@@ -18,11 +18,11 @@ export function AuthHeader() {
       </Button>
 
       <View className='flex-row items-center'>
-        <Image
-          source={require('@/assets/images/bloca-icon.svg')}
-          style={{ width: 42, height: 42 }}
-          contentFit='contain'
-        />
+        {/* <Image */}
+        {/*   source={require('@/assets/images/bloca-icon.svg')} */}
+        {/*   style={{ width: 42, height: 42 }} */}
+        {/*   contentFit='contain' */}
+        {/* /> */}
         <Typography.Heading className='text-accent'> BLOCA </Typography.Heading>
       </View>
 
