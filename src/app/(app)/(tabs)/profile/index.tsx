@@ -1,8 +1,10 @@
 import { Screen } from '@/components/screen';
 import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { StyledRefreshControl } from '@/components/styled-refresh-control';
+import { THEME_OPTIONS } from '@/constants/theme';
 import { ProfileHeader } from '@/features/profile/components/profile-header';
 import { SettingsSection } from '@/features/profile/components/settings-section';
+import { useThemeStore } from '@/stores/theme-store';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
 import { useCallback, useState } from 'react';
@@ -10,6 +12,8 @@ import { ScrollView } from 'react-native';
 import { useCSSVariable } from 'uniwind';
 
 export default function ProfileScreen() {
+  const theme = useThemeStore((s) => s.theme);
+  const { label, icon } = THEME_OPTIONS[theme];
   const accent = useCSSVariable('--color-accent') as string;
   const [refreshing, setRefreshing] = useState(false);
 
@@ -70,9 +74,9 @@ export default function ProfileScreen() {
           title='Personalization'
           items={[
             {
-              icon: 'monitor',
+              icon: icon,
               label: 'Theme',
-              value: 'System Default',
+              value: label,
               onPress: () => {
                 router.push('/profile/theme');
               },
