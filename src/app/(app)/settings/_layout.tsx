@@ -30,7 +30,6 @@ export default function SettingsLayout() {
         name='verify-number'
         options={{ headerTitle: 'Verify Number' }}
       />
-      {/* Theme */}
       <Stack.Screen name='theme' options={{ headerTitle: 'Theme' }} />
     </Stack>
   );
