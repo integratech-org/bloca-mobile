@@ -61,7 +61,7 @@ export function VerifyOtpForm() {
       )}
 
       <Button
-        onPress={() => router.push('/(auth)/forgot-password/reset-password')}
+        onPress={() => router.push('/auth/forgot-password/reset-password')}
         className='mt-auto w-full rounded-2xl'
       >
         Verify code

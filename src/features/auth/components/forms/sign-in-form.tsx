@@ -64,7 +64,7 @@ export function SignInForm() {
 
       {/* Forgot Password Link */}
       <LinkButton
-        onPress={() => router.push('/(auth)/forgot-password')}
+        onPress={() => router.push('/auth/forgot-password')}
         className='mt-2 self-end'
       >
         <LinkButton.Label>

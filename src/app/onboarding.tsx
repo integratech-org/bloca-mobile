@@ -31,7 +31,7 @@ export default function OnboardingScreen() {
   const goTo = (i: number) => flatListRef.current?.scrollToIndex({ index: i });
   const finish = () => {
     completeOnboarding();
-    router.push('/(auth)/sign-in');
+    router.push('/auth/sign-in');
   };
 
   return (

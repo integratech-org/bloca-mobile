@@ -48,7 +48,7 @@ export default function RootLayout() {
           </Stack.Protected>
 
           <Stack.Protected guard={hasCompletedOnboarding}>
-            <Stack.Screen name='(auth)' />
+            <Stack.Screen name='auth' />
             <Stack.Screen name='(app)' />
           </Stack.Protected>
         </Stack>
