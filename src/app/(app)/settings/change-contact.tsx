@@ -1,4 +1,5 @@
 import { Screen } from '@/components/screen';
+import { router } from 'expo-router';
 import { Button, Input, Label, TextField, Typography } from 'heroui-native';
 import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, View } from 'react-native';
@@ -53,7 +54,12 @@ export default function ChangeContactScreen() {
 
           {/* Bottom button */}
           <View className='pb-2'>
-            <Button className='rounded-2xl' onPress={() => {}}>
+            <Button
+              className='rounded-2xl'
+              onPress={() => {
+                router.push('/(app)/settings/verify-number');
+              }}
+            >
               <Button.Label>Send verification code</Button.Label>
             </Button>
           </View>

@@ -48,24 +48,24 @@ export default function ProfileScreen() {
               icon: 'email-outline',
               label: 'Email',
               value: 'j•••@company.com',
-              onPress: () => router.push('/profile/change-email'),
+              onPress: () => router.push('/(app)/settings/change-email'),
             },
             {
               icon: 'phone-outline',
               label: 'Contact Number',
               value: '+63 9•• ••• ••34',
-              onPress: () => router.push('/profile/change-contact'),
+              onPress: () => router.push('/(app)/settings/change-contact'),
             },
             {
               icon: 'map-marker-outline',
               label: 'Address',
               value: 'Brgy. •••, Quezon City',
-              onPress: () => router.push('/profile/edit-address'),
+              onPress: () => router.push('/(app)/settings/edit-address'),
             },
             {
               icon: 'lock-outline',
               label: 'Change Password',
-              onPress: () => router.push('/profile/change-password'),
+              onPress: () => router.push('/(app)/settings/change-password'),
             },
           ]}
         />
@@ -78,7 +78,7 @@ export default function ProfileScreen() {
               label: 'Theme',
               value: label,
               onPress: () => {
-                router.push('/profile/theme');
+                router.push('/(app)/settings/theme');
               },
             },
           ]}
