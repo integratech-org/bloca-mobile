@@ -20,7 +20,7 @@ export default function ThemeScreen() {
 
   return (
     <Screen>
-      <View className='gap-3 p-4'>
+      <View className='gap-6 p-4'>
         <Typography.Paragraph type='body-sm' className='text-muted'>
           Choose how the app looks on your device.
         </Typography.Paragraph>

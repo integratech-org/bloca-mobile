@@ -15,7 +15,7 @@ import { useCSSVariable } from 'uniwind';
 export function ResetPasswordForm() {
   const [fg] = useCSSVariable(['--color-foreground']) as string[];
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
@@ -33,15 +33,15 @@ export function ResetPasswordForm() {
           </InputGroup.Prefix>
           <InputGroup.Input
             placeholder='Enter new password'
-            secureTextEntry={!showPassword}
+            secureTextEntry={!showNewPassword}
             className='rounded-2xl'
           />
           <InputGroup.Suffix>
             <Pressable
-              onPress={() => setShowPassword(!showPassword)}
+              onPress={() => setShowNewPassword(!showNewPassword)}
               hitSlop={8}
             >
-              {showPassword ? (
+              {showNewPassword ? (
                 <EyeIcon size={18} color={fg} />
               ) : (
                 <EyeSlashIcon size={18} color={fg} />
