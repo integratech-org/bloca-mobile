@@ -14,6 +14,7 @@ export default function DashboardLayout() {
         name='index'
         options={{
           headerTitle: 'Dashboard',
+          headerLeft: () => null,
           headerRight: () => (
             <Button
               isIconOnly
