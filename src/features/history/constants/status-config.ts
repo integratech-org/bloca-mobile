@@ -1,23 +1,26 @@
-import { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
+import { CheckCircleIcon } from 'phosphor-react-native/src/icons/CheckCircle';
 import { BatchStatus } from '../types';
+import { type Icon } from 'phosphor-react-native';
+import { InfoIcon } from 'phosphor-react-native/src/icons/Info';
+import { WarningIcon } from 'phosphor-react-native/src/icons/Warning';
 
 export const STATUS_CONFIG: Record<
   BatchStatus,
-  { listLabel: string; reportLabel: string; icon: MaterialDesignIconsIconName }
+  { listLabel: string; reportLabel: string; icon: Icon }
 > = {
   pass: {
     listLabel: 'Pass',
     reportLabel: 'Accepted',
-    icon: 'check-circle-outline',
+    icon: CheckCircleIcon,
   },
   suggestion: {
     listLabel: 'Suggestion',
     reportLabel: 'Needs review',
-    icon: 'information-slab-circle-outline',
+    icon: InfoIcon,
   },
   fail: {
     listLabel: 'Fail',
     reportLabel: 'Rejected',
-    icon: 'alert-outline',
+    icon: WarningIcon,
   },
 };

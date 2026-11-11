@@ -1,5 +1,4 @@
 import { Screen } from '@/components/screen';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import {
   Button,
   InputGroup,
@@ -56,11 +55,11 @@ function PasswordInputField({
         />
         <InputGroup.Suffix>
           <Pressable onPress={onToggleVisibility} hitSlop={8}>
-            <StyledMaterialDesignIcons
-              name={isVisible ? 'eye-off-outline' : 'eye-outline'}
-              size={20}
-              className='text-muted'
-            />
+            {/* <StyledMaterialDesignIcons */}
+            {/*   name={isVisible ? 'eye-off-outline' : 'eye-outline'} */}
+            {/*   size={20} */}
+            {/*   className='text-muted' */}
+            {/* /> */}
           </Pressable>
         </InputGroup.Suffix>
       </InputGroup>

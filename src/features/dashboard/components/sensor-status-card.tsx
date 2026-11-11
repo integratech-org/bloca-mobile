@@ -1,14 +1,17 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { ProgressBar } from './progress-bar';
+import { ThermometerIcon } from 'phosphor-react-native/src/icons/Thermometer';
+import { useCSSVariable } from 'uniwind';
 
 export function SensorStatusCard() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
+
   return (
     <Surface className='flex-1 rounded-2xl'>
       <View className='gap-2'>
         <View className='items-center'>
-          <StyledMaterialDesignIcons name='thermometer' size={28} />
+          <ThermometerIcon size={28} color={fg} />
         </View>
 
         <View>

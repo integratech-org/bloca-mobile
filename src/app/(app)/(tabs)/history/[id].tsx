@@ -38,10 +38,7 @@ export default function QualityReportScreen() {
           />
         }
       >
-        <View className='gap-3'>
-          <StatusCard id='B-1' status='pass' timestamp='2023-08-15 14:30:00' />
-          <OperatorCard operator='John Doe' />
-        </View>
+        <StatusCard id='B-1' status='pass' timestamp='2023-08-15 14:30:00' />
         <PredictedStrengthCard value={4.61} />
         <MaterialCompositionCard plasticPct={80} />
         <BatchDetailsSection

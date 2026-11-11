@@ -1,10 +1,10 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Card, cn, PressableFeedback, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import {
   PROCESS_VARIABLE_INFO,
   ProcessVariableKey,
 } from '@/constants/process-variable-info';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   variable: ProcessVariableKey;
@@ -21,7 +21,8 @@ export default function ProcessVariableTile({
   active = false,
   onPress,
 }: Props) {
-  const { icon, label: defaultLabel } = PROCESS_VARIABLE_INFO[variable];
+  const [muted] = useCSSVariable(['--color-muted']) as string[];
+  const { icon: Icon, label: defaultLabel } = PROCESS_VARIABLE_INFO[variable];
 
   const label = labelOverride ?? defaultLabel;
 
@@ -29,11 +30,7 @@ export default function ProcessVariableTile({
     <Card className='gap-2 rounded-2xl'>
       <Card.Title>
         <View className='flex-row items-center gap-1.5'>
-          <StyledMaterialDesignIcons
-            name={icon}
-            size={16}
-            className='text-muted'
-          />
+          <Icon size={16} color={muted} />
           <Typography.Paragraph
             type='body-xs'
             className='text-muted font-medium uppercase'

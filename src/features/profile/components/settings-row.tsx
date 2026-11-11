@@ -1,31 +1,33 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
-import { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
 import { Button, Typography } from 'heroui-native';
+import type { Icon } from 'phosphor-react-native';
+import { CaretRightIcon } from 'phosphor-react-native/src/icons/CaretRight';
 import { View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 export interface SettingsRowProps {
-  icon: MaterialDesignIconsIconName;
+  icon: Icon;
   label: string;
   value?: string;
   onPress?: () => void;
 }
 
 export default function SettingsRow({
-  icon,
+  icon: Icon,
   label,
   value,
   onPress,
 }: SettingsRowProps) {
+  const [fg, muted] = useCSSVariable([
+    '--color-foreground',
+    '--color-muted',
+  ]) as string[];
+
   return (
     <Button variant='ghost' onPress={onPress} className='rounded-lg'>
       <View className='w-full flex-row items-center justify-between gap-3'>
         {/*left*/}
         <View className='shrink-0 flex-row items-center gap-3'>
-          <StyledMaterialDesignIcons
-            name={icon}
-            size={18}
-            className='text-foreground'
-          />
+          <Icon size={18} color={fg} />
 
           <Typography.Paragraph type='body-xs' numberOfLines={1}>
             {label}
@@ -43,11 +45,7 @@ export default function SettingsRow({
               {value}
             </Typography.Paragraph>
           )}
-          <StyledMaterialDesignIcons
-            name='chevron-right'
-            size={20}
-            className='text-muted'
-          />
+          <CaretRightIcon size={14} weight='bold' color={muted} />
         </View>
       </View>
     </Button>

@@ -2,12 +2,13 @@ import { Section } from '@/components/section';
 import { Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { MaterialExampleList } from './material-example-list';
+import { CheckCircleIcon } from 'phosphor-react-native/src/icons/CheckCircle';
 
 export function AcceptedMaterialsCard() {
   return (
     <Section
       variant='success'
-      icon='check-circle-outline'
+      icon={CheckCircleIcon}
       title='Accepted Materials'
     >
       <Surface className='rounded-2xl'>

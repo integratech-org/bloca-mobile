@@ -11,9 +11,10 @@ import {
 } from 'heroui-native';
 import { View } from 'react-native';
 import { Fragment } from 'react';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
+import { useCSSVariable } from 'uniwind';
 
 export default function ThemeScreen() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
   const theme = useThemeStore((s) => s.theme);
   const setTheme = useThemeStore((s) => s.setTheme);
 
@@ -31,7 +32,7 @@ export default function ThemeScreen() {
             className='gap-0.5'
           >
             {themes.map((t, i) => {
-              const { label, description, icon } = THEME_OPTIONS[t];
+              const { label, description, icon: Icon } = THEME_OPTIONS[t];
               return (
                 <Fragment key={t}>
                   {i > 0 ? <Separator /> : null}
@@ -42,11 +43,7 @@ export default function ThemeScreen() {
                       className='w-full justify-between rounded-lg'
                     >
                       <View className='flex-1 flex-row items-center gap-3'>
-                        <StyledMaterialDesignIcons
-                          name={icon}
-                          size={18}
-                          className='text-foreground shrink-0'
-                        />
+                        <Icon size={18} color={fg} />
                         <View className='flex-1 flex-col gap-0.5'>
                           <Typography.Paragraph
                             type='body-xs'

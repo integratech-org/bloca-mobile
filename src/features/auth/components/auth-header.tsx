@@ -1,10 +1,13 @@
 import { StyledImage } from '@/components/styled-image';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { router } from 'expo-router';
 import { Button, Typography } from 'heroui-native';
+import { CaretLeftIcon } from 'phosphor-react-native/src/icons/CaretLeft';
 import { View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 export function AuthHeader() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
+
   return (
     <View className='relative flex-row items-center justify-center gap-4'>
       <Button
@@ -13,7 +16,7 @@ export function AuthHeader() {
         onPress={() => router.back()}
         className='absolute left-0'
       >
-        <StyledMaterialDesignIcons name='chevron-left' size={28} />
+        <CaretLeftIcon size={28} color={fg} />
       </Button>
 
       <View className='flex-row items-center gap-2'>

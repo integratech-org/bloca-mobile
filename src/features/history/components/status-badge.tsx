@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { STATUS_CONFIG } from '../constants/status-config';
 
 const badge = tv({
-  slots: { root: 'rounded-full px-2 py-1', text: 'text-xs font-bold' },
+  slots: { root: 'rounded-full px-2 py-1', text: 'text-xs font-medium' },
   variants: {
     status: {
       pass: { root: 'bg-success/15', text: 'text-success' },

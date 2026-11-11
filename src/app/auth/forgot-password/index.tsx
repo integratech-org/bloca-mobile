@@ -27,7 +27,7 @@ export default function ForgotPasswordScreen() {
         />
 
         <Button
-          onPress={() => router.push('/(auth)/forgot-password/verify-otp')}
+          onPress={() => router.push('/auth/forgot-password/verify-otp')}
           className='mt-auto rounded-2xl'
         >
           Send code

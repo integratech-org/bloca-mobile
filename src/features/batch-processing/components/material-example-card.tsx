@@ -22,7 +22,9 @@ export function MaterialExampleCard({ label, image }: Props) {
         colors={['transparent', 'rgba(0,0,0,0.8)']}
         className='absolute inset-x-0 bottom-0 h-24 justify-end px-2 pb-2'
       >
-        <Typography.Paragraph type='body-xs'>{label}</Typography.Paragraph>
+        <Typography.Paragraph type='body-xs' className='text-accent-foreground'>
+          {label}
+        </Typography.Paragraph>
       </LinearGradient>
     </View>
   );

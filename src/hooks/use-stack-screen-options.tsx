@@ -1,7 +1,7 @@
 import { NativeStackNavigationOptions, router } from 'expo-router';
 import { useCSSVariable } from 'uniwind';
 import { Pressable } from 'react-native';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
+import { CaretLeftIcon } from 'phosphor-react-native/src/icons/CaretLeft';
 
 export function useStackScreenOptions(
   overrides?: NativeStackNavigationOptions,
@@ -26,14 +26,10 @@ export function useStackScreenOptions(
       canGoBack ? (
         <Pressable
           onPress={() => router.back()}
-          hitSlop={12}
+          hitSlop={16}
           style={{ marginRight: 8 }}
         >
-          <StyledMaterialDesignIcons
-            name='chevron-left'
-            size={28}
-            color={tintColor}
-          />
+          <CaretLeftIcon size={22} color={tintColor as string} weight='bold' />
         </Pressable>
       ) : null,
     ...overrides,

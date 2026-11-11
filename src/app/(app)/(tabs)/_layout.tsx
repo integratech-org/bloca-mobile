@@ -1,8 +1,12 @@
 import { Tabs } from 'expo-router';
 import { PlatformPressable } from 'expo-router/build/react-navigation';
-import { MaterialDesignIcons } from '@react-native-vector-icons/material-design-icons';
 import { Pressable, View } from 'react-native';
 import { useCSSVariable } from 'uniwind';
+import { HouseIcon } from 'phosphor-react-native/src/icons/House';
+import { SealCheckIcon } from 'phosphor-react-native/src/icons/SealCheck';
+import { ClockCounterClockwiseIcon } from 'phosphor-react-native/src/icons/ClockCounterClockwise';
+import { PlusIcon } from 'phosphor-react-native/src/icons/Plus';
+import { UserIcon } from 'phosphor-react-native/src/icons/User';
 
 export default function TabsLayout() {
   const [surface, accent, accentFg, muted, border] = useCSSVariable([
@@ -38,10 +42,10 @@ export default function TabsLayout() {
         options={{
           title: 'Dashboard',
           tabBarIcon: ({ color, focused }) => (
-            <MaterialDesignIcons
-              name={focused ? 'home' : 'home-outline'}
-              color={color}
+            <HouseIcon
               size={30}
+              weight={focused ? 'fill' : 'regular'}
+              color={color as string}
             />
           ),
         }}
@@ -51,10 +55,10 @@ export default function TabsLayout() {
         options={{
           title: 'Quality Grade',
           tabBarIcon: ({ color, focused }) => (
-            <MaterialDesignIcons
-              name={focused ? 'check-decagram' : 'check-decagram-outline'}
-              color={color}
+            <SealCheckIcon
               size={30}
+              weight={focused ? 'fill' : 'regular'}
+              color={color as string}
             />
           ),
         }}
@@ -71,7 +75,7 @@ export default function TabsLayout() {
                 accessibilityLabel='Batch processing'
                 className='bg-accent h-10 w-16 items-center justify-center rounded-2xl shadow-lg'
               >
-                <MaterialDesignIcons name='plus' color={accentFg} size={30} />
+                <PlusIcon size={30} color={accentFg} weight='bold' />
               </Pressable>
             </View>
           ),
@@ -81,8 +85,12 @@ export default function TabsLayout() {
         name='history'
         options={{
           title: 'History',
-          tabBarIcon: ({ color }) => (
-            <MaterialDesignIcons name='history' color={color} size={30} />
+          tabBarIcon: ({ color, focused }) => (
+            <ClockCounterClockwiseIcon
+              size={30}
+              weight={focused ? 'fill' : 'regular'}
+              color={color as string}
+            />
           ),
         }}
       />
@@ -91,10 +99,10 @@ export default function TabsLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
-            <MaterialDesignIcons
-              name={focused ? 'account' : 'account-outline'}
-              color={color}
+            <UserIcon
               size={30}
+              weight={focused ? 'fill' : 'regular'}
+              color={color as string}
             />
           ),
         }}

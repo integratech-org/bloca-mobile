@@ -1,17 +1,17 @@
-import { MaterialDesignIconsIconName } from '@react-native-vector-icons/material-design-icons';
+import type { Icon } from 'phosphor-react-native';
 
 export interface SafetyItem {
-  icon: MaterialDesignIconsIconName;
+  icon: Icon;
   text: string;
 }
 
 export interface BatchItem {
-  icon: MaterialDesignIconsIconName;
+  icon: Icon;
   text: string;
 }
 
 export interface ChecklistItem {
-  icon: MaterialDesignIconsIconName;
+  icon: Icon;
   title: string;
   description: string;
 }

@@ -1,4 +1,3 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { router } from 'expo-router';
 import {
   Button,
@@ -10,8 +9,14 @@ import {
 } from 'heroui-native';
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { EnvelopeSimpleIcon } from 'phosphor-react-native/src/icons/EnvelopeSimple';
+import { LockIcon } from 'phosphor-react-native/src/icons/Lock';
+import { EyeIcon } from 'phosphor-react-native/src/icons/Eye';
+import { EyeSlashIcon } from 'phosphor-react-native/src/icons/EyeSlash';
+import { useCSSVariable } from 'uniwind';
 
 export function SignInForm() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -24,7 +29,7 @@ export function SignInForm() {
           </Label>
           <InputGroup>
             <InputGroup.Prefix isDecorative>
-              <StyledMaterialDesignIcons name='email-outline' size={18} />
+              <EnvelopeSimpleIcon size={18} color={fg} />
             </InputGroup.Prefix>
             <InputGroup.Input
               placeholder='Enter email'
@@ -40,7 +45,7 @@ export function SignInForm() {
           </Label>
           <InputGroup>
             <InputGroup.Prefix isDecorative>
-              <StyledMaterialDesignIcons name='lock-outline' size={18} />
+              <LockIcon size={18} color={fg} />
             </InputGroup.Prefix>
             <InputGroup.Input
               placeholder='Enter password'
@@ -52,10 +57,11 @@ export function SignInForm() {
                 onPress={() => setShowPassword(!showPassword)}
                 hitSlop={8}
               >
-                <StyledMaterialDesignIcons
-                  name={showPassword ? 'eye-outline' : 'eye-off-outline'}
-                  size={18}
-                />
+                {showPassword ? (
+                  <EyeIcon size={18} color={fg} />
+                ) : (
+                  <EyeSlashIcon size={18} color={fg} />
+                )}
               </Pressable>
             </InputGroup.Suffix>
           </InputGroup>

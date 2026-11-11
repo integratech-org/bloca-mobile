@@ -1,4 +1,3 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import {
   Button,
   InputGroup,
@@ -6,10 +5,16 @@ import {
   TextField,
   Typography,
 } from 'heroui-native';
+import { LockIcon } from 'phosphor-react-native/src/icons/Lock';
+import { EyeIcon } from 'phosphor-react-native/src/icons/Eye';
+import { EyeSlashIcon } from 'phosphor-react-native/src/icons/EyeSlash';
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 export function ResetPasswordForm() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -24,7 +29,7 @@ export function ResetPasswordForm() {
         </Label>
         <InputGroup>
           <InputGroup.Prefix isDecorative>
-            <StyledMaterialDesignIcons name='lock-outline' size={18} />
+            <LockIcon size={18} color={fg} />
           </InputGroup.Prefix>
           <InputGroup.Input
             placeholder='Enter new password'
@@ -36,10 +41,11 @@ export function ResetPasswordForm() {
               onPress={() => setShowPassword(!showPassword)}
               hitSlop={8}
             >
-              <StyledMaterialDesignIcons
-                name={showPassword ? 'eye-outline' : 'eye-off-outline'}
-                size={18}
-              />
+              {showPassword ? (
+                <EyeIcon size={18} color={fg} />
+              ) : (
+                <EyeSlashIcon size={18} color={fg} />
+              )}
             </Pressable>
           </InputGroup.Suffix>
         </InputGroup>
@@ -54,7 +60,7 @@ export function ResetPasswordForm() {
         </Label>
         <InputGroup>
           <InputGroup.Prefix isDecorative>
-            <StyledMaterialDesignIcons name='lock-outline' size={18} />
+            <LockIcon size={18} color={fg} />
           </InputGroup.Prefix>
           <InputGroup.Input
             placeholder='Enter confirm password'
@@ -66,10 +72,11 @@ export function ResetPasswordForm() {
               onPress={() => setShowConfirmPassword(!showConfirmPassword)}
               hitSlop={8}
             >
-              <StyledMaterialDesignIcons
-                name={showConfirmPassword ? 'eye-outline' : 'eye-off-outline'}
-                size={18}
-              />
+              {showConfirmPassword ? (
+                <EyeIcon size={18} color={fg} />
+              ) : (
+                <EyeSlashIcon size={18} color={fg} />
+              )}
             </Pressable>
           </InputGroup.Suffix>
         </InputGroup>

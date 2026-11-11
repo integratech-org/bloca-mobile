@@ -1,7 +1,7 @@
 import { Button, Checkbox, Typography } from 'heroui-native';
 import { ChecklistItem } from '../types';
 import { View } from 'react-native';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   item: ChecklistItem;
@@ -10,6 +10,8 @@ interface Props {
 }
 
 export function ChecklistListItem({ item, checked, onToggle }: Props) {
+  const [accentFg] = useCSSVariable(['--color-accent-foreground']) as string[];
+
   return (
     <Button
       variant='outline'
@@ -19,11 +21,7 @@ export function ChecklistListItem({ item, checked, onToggle }: Props) {
       }`}
     >
       <View className='bg-accent size-12 shrink-0 items-center justify-center rounded-full'>
-        <StyledMaterialDesignIcons
-          name={item.icon}
-          size={24}
-          className='text-accent-foreground'
-        />
+        <item.icon size={24} color={accentFg} />
       </View>
 
       {/* text */}

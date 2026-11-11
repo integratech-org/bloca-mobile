@@ -1,6 +1,7 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Button, Dialog } from 'heroui-native';
 import { View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
+import { WarningIcon } from 'phosphor-react-native/src/icons/Warning';
 
 interface Props {
   isOpen: boolean;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export function KillPowerDialog({ isOpen, onOpenChange }: Props) {
+  const [danger] = useCSSVariable(['--color-danger']) as string[];
+
   return (
     <Dialog isOpen={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -16,11 +19,7 @@ export function KillPowerDialog({ isOpen, onOpenChange }: Props) {
           {/* alert icon */}
           <View className='w-full items-center justify-center'>
             <View className='bg-danger/10 size-16 items-center justify-center rounded-full'>
-              <StyledMaterialDesignIcons
-                name='alert-outline'
-                size={32}
-                className='text-danger'
-              />
+              <WarningIcon size={32} color={danger} weight='bold' />
             </View>
           </View>
 
