@@ -22,6 +22,7 @@ export default function SettingsLayout() {
         name='change-password'
         options={{ headerTitle: 'Change Password' }}
       />
+      <Stack.Screen name='theme' options={{ headerTitle: 'Theme' }} />
       <Stack.Screen
         name='verify-email'
         options={{ headerTitle: 'Verify Email' }}
@@ -30,7 +31,6 @@ export default function SettingsLayout() {
         name='verify-number'
         options={{ headerTitle: 'Verify Number' }}
       />
-      <Stack.Screen name='theme' options={{ headerTitle: 'Theme' }} />
     </Stack>
   );
 }
