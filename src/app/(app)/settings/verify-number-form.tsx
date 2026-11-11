@@ -1,4 +1,3 @@
-import { router } from 'expo-router';
 import { Button, InputOTP, LinkButton, Typography } from 'heroui-native';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
