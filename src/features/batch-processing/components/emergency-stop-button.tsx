@@ -1,5 +1,6 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Button, cn } from 'heroui-native';
+import { WarningIcon } from 'phosphor-react-native/src/icons/Warning';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   onPress: () => void;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export function EmergencyStopButton({ onPress, isDisabled, className }: Props) {
+  const [danger] = useCSSVariable(['--color-danger']) as string[];
   return (
     <Button
       variant='outline'
@@ -20,11 +22,7 @@ export function EmergencyStopButton({ onPress, isDisabled, className }: Props) {
         className,
       )}
     >
-      <StyledMaterialDesignIcons
-        name='alert-outline'
-        size={24}
-        className='text-danger'
-      />
+      <WarningIcon size={24} color={danger} weight='bold' />
       <Button.Label className='text-danger font-semibold tracking-wide uppercase'>
         Emergency stop
       </Button.Label>

@@ -1,10 +1,11 @@
 import { BottomSheet, Typography, Separator } from 'heroui-native';
 import { View } from 'react-native';
 import { useProcessVariableSheetStore } from '../stores/process-variable-sheet-store';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { PROCESS_VARIABLE_INFO } from '@/constants/process-variable-info';
+import { useCSSVariable } from 'uniwind';
 
 export function ProcessVariableDetailSheet() {
+  const [muted] = useCSSVariable(['--color-muted']) as string[];
   const selected = useProcessVariableSheetStore((s) => s.selected);
   const isOpen = useProcessVariableSheetStore((s) => s.isOpen);
   const close = useProcessVariableSheetStore((s) => s.close);
@@ -23,11 +24,7 @@ export function ProcessVariableDetailSheet() {
               <View className='flex-row items-center gap-2'>
                 {info && (
                   <View className='bg-surface-secondary size-8 items-center justify-center rounded-lg'>
-                    <StyledMaterialDesignIcons
-                      name={info.icon}
-                      size={20}
-                      className='text-muted'
-                    />
+                    <info.icon size={20} color={muted} />
                   </View>
                 )}
                 <BottomSheet.Title>{info?.title}</BottomSheet.Title>

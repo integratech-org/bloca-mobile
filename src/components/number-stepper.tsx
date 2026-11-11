@@ -1,7 +1,9 @@
 import { Button, Input, TextField } from 'heroui-native';
 import { View } from 'react-native';
-import { StyledMaterialDesignIcons } from './styled-material-design-icons';
 import { useNumberFieldState } from '@react-stately/numberfield';
+import { MinusIcon } from 'phosphor-react-native/src/icons/Minus';
+import { PlusIcon } from 'phosphor-react-native/src/icons/Plus';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   label?: string;
@@ -26,6 +28,7 @@ export default function NumberStepper({
   locale = 'en-US',
   ...props
 }: Props) {
+  const [muted] = useCSSVariable(['--color-muted']) as string[];
   const state = useNumberFieldState({
     ...props,
     locale,
@@ -45,11 +48,7 @@ export default function NumberStepper({
         onPress={() => state.decrement()}
         className='rounded-2xl'
       >
-        <StyledMaterialDesignIcons
-          name='minus'
-          size={20}
-          className='text-muted'
-        />
+        <MinusIcon size={20} color={muted} weight='bold' />
       </Button>
 
       <TextField
@@ -82,11 +81,7 @@ export default function NumberStepper({
         onPress={state.increment}
         className='rounded-2xl'
       >
-        <StyledMaterialDesignIcons
-          name='plus'
-          size={20}
-          className='text-muted'
-        />
+        <PlusIcon size={20} color={muted} weight='bold' />
       </Button>
     </View>
   );

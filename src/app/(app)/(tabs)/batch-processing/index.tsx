@@ -1,12 +1,15 @@
 import { Screen } from '@/components/screen';
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { AcceptedMaterialsCard } from '@/features/batch-processing/components/accepted-materials-card';
 import { OperatingInstructionsCard } from '@/features/batch-processing/components/operating-instructions-card';
 import { router } from 'expo-router';
 import { Button } from 'heroui-native';
+import { PlayIcon } from 'phosphor-react-native';
 import { ScrollView } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 export default function BatchProcessingScreen() {
+  const [accentFg] = useCSSVariable(['--color-accent-foreground']) as string[];
+
   return (
     <Screen>
       <ScrollView
@@ -17,11 +20,7 @@ export default function BatchProcessingScreen() {
           className='shadow-accent/65 rounded-2xl shadow-[0_5px_0]'
           onPress={() => router.push('/batch-processing/new-batch')}
         >
-          <StyledMaterialDesignIcons
-            name='play'
-            size={20}
-            className='text-accent-foreground'
-          />
+          <PlayIcon size={20} color={accentFg} weight='bold' />
 
           <Button.Label>START NEW BATCH</Button.Label>
         </Button>

@@ -1,12 +1,15 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Avatar, Card, Typography } from 'heroui-native';
+import { UserIcon } from 'phosphor-react-native/src/icons/User';
 import { View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   operator: string;
 }
 
 export function OperatorCard({ operator }: Props) {
+  const [accent] = useCSSVariable(['--color-accent']) as string[];
+
   return (
     <Card className='gap-2 rounded-2xl'>
       <Card.Body>
@@ -14,11 +17,7 @@ export function OperatorCard({ operator }: Props) {
           <Avatar>
             <Avatar.Image />
             <Avatar.Fallback>
-              <StyledMaterialDesignIcons
-                name='account-outline'
-                size={22}
-                className='text-accent'
-              />
+              <UserIcon size={22} color={accent} weight='bold' />
             </Avatar.Fallback>
           </Avatar>
 

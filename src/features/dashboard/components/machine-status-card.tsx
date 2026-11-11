@@ -1,9 +1,13 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { PressableFeedback, Surface, Typography } from 'heroui-native';
 import { View } from 'react-native';
 import { ProgressBar } from './progress-bar';
+import { useCSSVariable } from 'uniwind';
+import { FireIcon } from 'phosphor-react-native/src/icons/Fire';
+import { CaretRightIcon } from 'phosphor-react-native/src/icons/CaretRight';
 
 export function MachineStatusCard() {
+  const [accent] = useCSSVariable(['--color-accent']) as string[];
+
   return (
     <PressableFeedback className='overflow-hidden rounded-2xl'>
       <Surface className='border-accent rounded-2xl border-2'>
@@ -11,11 +15,7 @@ export function MachineStatusCard() {
           <View className='flex-row items-center justify-between'>
             <View className='flex-row items-center'>
               {/* icon */}
-              <StyledMaterialDesignIcons
-                name='fire'
-                size={64}
-                className='text-accent'
-              />
+              <FireIcon size={64} color={accent} weight='bold' />
 
               <View>
                 <Typography.Paragraph type='body-sm' className='text-muted'>
@@ -26,11 +26,7 @@ export function MachineStatusCard() {
             </View>
 
             <View className='items-end'>
-              <StyledMaterialDesignIcons
-                name='chevron-right'
-                size={24}
-                className='text-accent'
-              />
+              <CaretRightIcon size={18} color={accent} weight='bold' />
               <Typography.Paragraph type='body'>B-01</Typography.Paragraph>
             </View>
           </View>

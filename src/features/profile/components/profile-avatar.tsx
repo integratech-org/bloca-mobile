@@ -1,6 +1,8 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { Avatar, Button } from 'heroui-native';
+import { UserIcon } from 'phosphor-react-native';
+import { CameraIcon } from 'phosphor-react-native/src/icons/Camera';
 import { View } from 'react-native';
+import { useCSSVariable } from 'uniwind';
 
 interface Props {
   source: string;
@@ -8,16 +10,17 @@ interface Props {
 }
 
 export default function ProfileAvatar({ source, onPress }: Props) {
+  const [accent, accentFg] = useCSSVariable([
+    '--color-accent',
+    '--color-accent-foreground',
+  ]) as string[];
+
   return (
     <View className='relative size-24'>
       <Avatar size='lg' className='size-24'>
         <Avatar.Image source={{ uri: source }} />
         <Avatar.Fallback>
-          <StyledMaterialDesignIcons
-            name='account-outline'
-            size={48}
-            className='text-accent'
-          />
+          <UserIcon size='48' color={accent} weight='bold' />
         </Avatar.Fallback>
       </Avatar>
 
@@ -29,11 +32,7 @@ export default function ProfileAvatar({ source, onPress }: Props) {
         variant='primary'
         className='border-background absolute right-0 bottom-0 size-8 border'
       >
-        <StyledMaterialDesignIcons
-          name='camera'
-          size={16}
-          className='text-accent-foreground'
-        />
+        <CameraIcon size={16} color={accentFg} weight='bold' />
       </Button>
     </View>
   );

@@ -1,9 +1,11 @@
-import { StyledMaterialDesignIcons } from '@/components/styled-material-design-icons';
 import { useStackScreenOptions } from '@/hooks/use-stack-screen-options';
 import { router, Stack } from 'expo-router';
 import { Button } from 'heroui-native';
+import { BellIcon } from 'phosphor-react-native/src/icons/Bell';
+import { useCSSVariable } from 'uniwind';
 
 export default function DashboardLayout() {
+  const [fg] = useCSSVariable(['--color-foreground']) as string[];
   const screenOptions = useStackScreenOptions();
 
   return (
@@ -19,11 +21,7 @@ export default function DashboardLayout() {
               size='sm'
               onPress={() => router.push('/notifications')}
             >
-              <StyledMaterialDesignIcons
-                name='bell-outline'
-                className='text-foreground'
-                size={20}
-              />
+              <BellIcon size={20} color={fg} />
             </Button>
           ),
         }}
