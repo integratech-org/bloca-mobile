@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { ScreenHeading } from '@/components/screen-heading';
+import { VerifyEmailForm } from '@/features/settings/components/verify-email-form';
 import { View } from 'react-native';
-import { VerifyEmailForm } from './verify-email-form';
 
 export default function VerifyEmailScreen() {
   return (

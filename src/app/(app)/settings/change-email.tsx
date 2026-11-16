@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { View } from 'react-native';
-import { ChangeEmailForm } from './change-email-form';
 import { ScreenHeading } from '@/components/screen-heading';
+import { ChangeEmailForm } from '@/features/settings/components/change-email-form';
 
 export default function ChangeEmailScreen() {
   return (

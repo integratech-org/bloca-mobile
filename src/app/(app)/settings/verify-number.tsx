@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { ScreenHeading } from '@/components/screen-heading';
+import { VerifyNumberForm } from '@/features/settings/components/verify-number-form';
 import { View } from 'react-native';
-import { VerifyNumberForm } from './verify-number-form';
 
 export default function VerifyNumberScreen() {
   return (

@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { ScreenHeading } from '@/components/screen-heading';
 import { View } from 'react-native';
-import { EditAddressForm } from './edit-address-form';
+import { EditAddressForm } from '../../../features/settings/components/edit-address-form';
 
 export default function EditAddressScreen() {
   return (
