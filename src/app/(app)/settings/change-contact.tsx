@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { View } from 'react-native';
-import { ChangeContactForm } from './change-contact-form';
 import { ScreenHeading } from '@/components/screen-heading';
+import { ChangeContactForm } from '@/features/settings/components/change-contact-form';
 
 export default function ChangeContactScreen() {
   return (

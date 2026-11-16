@@ -1,7 +1,7 @@
 import { Screen } from '@/components/screen';
 import { ScreenHeading } from '@/components/screen-heading';
+import { ChangePasswordForm } from '@/features/settings/components/change-password-form';
 import { View } from 'react-native';
-import { ChangePasswordForm } from './change-password-form';
 
 export default function ChangePasswordScreen() {
   return (
